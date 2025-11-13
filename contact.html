@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <title>Kinco - Kindergarten HTML Template</title>
+
+    <meta name="author" content="themesflat.com">
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <!-- Reponsive -->
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">       
+
+    <!-- Favicon and Touch Icons  -->
+    <link rel="shortcut icon" href="assets/images/Favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/images/Favicon.png">
+
+</head>
+
+<body class="header-fixed inner-page contact">
+
+    <!-- Preloader -->
+    <div id="preload" class="preload">
+        <div class="preload-logo"></div>
+    </div>
+
+    <div id="wrapper">
+        <div id="page" class="clearfix">
+            <header id="header">
+                <div class="top-bar">
+                    <div class="inner jus-ct">
+                        <p class="clr-pri-1">Working Jours : Sun - Friday, 08:00 am - 05:00 pm</p>
+                    </div>
+                </div>
+                <div id="site-header">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="site-header-inner fx"> 
+                                    <div id="site-logo" class="clearfix">
+                                        <a href="index.html" class="logo">
+                                            <img  src="assets/images/logo/logodark.png" alt="Kinco">
+                                        </a>
+                                    </div>
+                                    <div class="btn-menu"><span></span></div>
+                                    <div class="nav-wrap">
+                                        <nav id="mainnav" class="mainnav st-2">
+                                            <ul class="menu">
+                                                <li class="menu-item-has-children">
+                                                    <a href="#">HOME</a>
+                                                    <ul class="sub-menu">
+                                                        <li><a href="index.html">Home 01</a></li>
+                                                        <li><a href="home2.html">Home 02</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="about.html">About</a>
+                                                </li>
+                                                <li class="menu-item-has-children">
+                                                    <a>PAGES</a>
+                                                    <ul class="sub-menu">
+                                                        <li class="inner-menu-item"><a href="#">Teachers</a>
+                                                            <ul class="sub-menu">
+                                                                <li><a href="teacher.html">Teacher</a></li>
+                                                                <li><a href="teacher-details.html">Teachers Details</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="inner-menu-item "><a href="#">Classes</a>
+                                                            <ul class="sub-menu">
+                                                                <li><a href="classes.html">Classes</a></li>
+                                                                <li><a href="classe-details.html">Classes Details</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="inner-menu-item"><a href="#">Events</a>
+                                                            <ul class="sub-menu">
+                                                                <li><a href="events.html">Event</a></li>
+                                                                <li><a href="event2.html">Event 2</a></li>
+                                                                <li><a href="event-details.html">Events Details</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li><a href="calendar.html">Academic Calendar</a></li>
+                                                        <li><a href="testimonials.html">testimonials</a></li> 
+                                                        <li><a href="time-table.html">Time Table</a></li>           
+                                                        <li><a href="gallery.html">gallery</a></li> 
+                                                        <li><a href="pricing.html">pricing</a></li> 
+                                                        <li><a href="faq.html">Faq</a></li>  
+                                                    </ul>
+                                                </li>
+                                                <li class="menu-item-has-children">
+                                                    <a>Programs</a>
+                                                    <ul class="sub-menu">
+                                                        <li><a href="program.html">Program</a></li>
+                                                        <li><a href="program-details.html">program details</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="menu-item-has-children">
+                                                    <a>BLOG</a>
+                                                    <ul class="sub-menu">
+                                                        <li><a href="blog-grid.html">blog grid</a></li>
+                                                        <li><a href="blog-list.html">blog list</a></li>
+                                                        <li><a href="blog-single.html">blog single</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="menu-item-has-children">
+                                                    <a>SHOP</a>
+                                                    <ul class="sub-menu">
+                                                        <li><a href="shop.html">Shop</a></li>
+                                                        <li><a href="shop-details.html">Shop Details</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="inner current-menu-item">
+                                                    <a href="contact.html" >CONTACTS</a>
+                                                </li>
+                                            </ul>
+                                            <!-- /.menu -->
+                                        </nav>
+                                    </div>
+                                    <div class="header-right fx">
+                                        <div id="header-search">
+                                            <a href="#" class="search-box header-search-icon">
+                                                <i class="far fa-search"></i>
+                                            </a>
+                                            <form role="search" method="get" class="header-search-form" action="#">
+                                                <input type="text" value="" name="s" class="header-search-field" placeholder="Search...">
+                                                <button type="submit" class="header-search-submit" title="Search"><i class="fa fa-search"></i></button>
+                                            </form>
+                                        </div>
+                                        <div class="header-contact fx">
+                                            <a href="#" class="menu-bar-right header-menu">
+                                                <svg data-name="Hero Area" xmlns="http://www.w3.org/2000/svg" width="58" height="58" viewBox="0 0 58 58">
+                                                    <defs>
+                                                    <style>
+                                                        .cls-1 {
+                                                        fill: #b250fe;
+                                                        }
+                                                
+                                                        .cls-1, .cls-2 {
+                                                        fill-rule: evenodd;
+                                                        }
+                                                
+                                                        .cls-2 {
+                                                        fill: #fff;
+                                                        }
+                                                    </style>
+                                                    </defs>
+                                                    <g data-name="Menu Area">
+                                                    <g id="Menu_bar" data-name="Menu bar">
+                                                        <path id="Bg" class="cls-1" d="M7.853,2.283c14.9-3.89,29.969-1.4,43.467.819a7.923,7.923,0,0,1,5.735,5.422c3.111,14.141-.428,28.636-1.166,42.981a5.157,5.157,0,0,1-4.773,4.875c-13.49.568-23.463,3.285-41.787,0.9C5.948,56.807,2.348,54.2,1.9,51.7-0.683,37.877.2,23.508,2.194,8.757a8.71,8.71,0,0,1,5.66-6.473"/>
+                                                        <path id="Bar" class="cls-2" d="M16,17H42a2,2,0,0,1,0,4H16A2,2,0,0,1,16,17Zm0,10H42a2,2,0,0,1,0,4H16A2,2,0,0,1,16,27Zm0,10H42a2,2,0,0,1,0,4H16A2,2,0,0,1,16,37Z"/>
+                                                    </g>
+                                                    </g>
+                                                </svg>
+                                            </a>
+
+                                            <div class="inner-contact fx">
+                                                <svg data-name="Hero Area" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49" height="47" viewBox="0 0 49 47">
+                                                    <g data-name="Menu Area">
+                                                    <g >
+                                                        <image  width="49" height="47" xlink:href="data:img/png;base64,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"/>
+                                                    </g>
+                                                    </g>
+                                                </svg>
+                                                <ul>
+                                                    <li class="clr-pri-2">Hotline</li>
+                                                    <li class="clr-pri-2">+012 (345) 678</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                    <div id="sidebar2" class="side-menu__block">
+                        <div class="side-menu__block-overlay custom-cursor__overlay"></div>
+                        
+                        <div class="inner-sidebar side-menu__block-inner fl-st-1">
+                            <div class="side-menu__top justify-content-end">
+                                <a href="#" class="side-menu__toggler side-menu__close-btn"><img src="assets/images/common/close.png" alt="images"></a>
+                            </div>
+                            <div class="wrap">
+                                <div class="widget widget-quote">
+                                    <div class="box-feature">
+                                        <div class="inner">
+                                            <img src="assets/images/post/post-quotes2.jpg" alt="Image">
+                                            <div class="box-icon jus-ali-ct">
+                                                <i class="far fa-quote-right"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="box-content">
+                                        <h5 class="author clr-pri-2">Patrick D. Smith</h5>
+                                        <p class="wrap f-rubik">
+                                            Sit amet consectetur adipiscing elit sed do eiusmod tempor didunt ut labore et dolore magna
+                                        </p>
+                                    </div>
+                                </div>
+    
+                                <div class="widget widget-search st-2">
+                                    <h4 class="title-widget fl-ctm-1">Search<span class="ctm-inner"></span></h4>
+                                    <div class="form-search-widget">
+                                        <form action="#">
+                                            <input type="text" placeholder="Search Here">
+                                            <button><i class="fas fa-search"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+    
+                                <div class="widget widget-category st-2">
+                                    <h4 class="title-widget fl-ctm-1">category<span class="ctm-inner"></span></h4>
+                                    <div class="list-category">
+                                        <ul>
+                                            <li class="fx"><span class="st wd-ctm">Arts &amp; Drawing</span><span class="st">05</span></li>
+                                            <li class="fx"><span class="st wd-ctm">Basic Language</span><span class="st">02</span></li>
+                                            <li class="fx"><span class="st wd-ctm">Graphics Design</span><span class="st">07</span></li>
+                                            <li class="fx"><span class="st wd-ctm">Web Development</span><span class="st">04</span></li>
+                                            <li class="fx"><span class="st wd-ctm">Lifestyle</span><span class="st">06</span></li>
+                                            <li class="fx"><span class="st wd-ctm">GYM &amp; Gaming</span><span class="st">05</span></li>
+                                            <li class="fx"><span class="st wd-ctm">Events &amp; Party</span><span class="st">05</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+    
+                                <div class="widget widget-news st-2">
+                                    <h4 class="title-widget fl-ctm-1">recent news<span class="ctm-inner"></span></h4>
+                                    <ul class="list-news">
+                                        <li class="fx">
+                                            <img src="assets/images/thumbnails/widget1.jpg" alt="Image" class="feature">
+                                            <ul class="box-content">
+                                                <li><h6 class="title"><a href="blog-single.html">Bake Layers Accesilit Testing Supporte</a></h6></li>
+                                                <li><a href="blog-single.html" class="fx meta-news clr-pri-4"><i class="far fa-calendar-alt"></i><span class="f-rubik">25 nov 2021</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="fx">
+                                            <img src="assets/images/thumbnails/widget2.jpg" alt="Image" class="feature">
+                                            <ul class="box-content">
+                                                <li><h6 class="title"><a href="blog-single.html">Bake Layers Accesilit Testin Supporte</a></h6></li>
+                                                <li><a href="blog-single.html" class="fx meta-news clr-pri-4"><i class="far fa-calendar-alt"></i><span class="f-rubik">25 nov 2021</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="fx">
+                                            <img src="assets/images/thumbnails/widget3.jpg" alt="Image" class="feature">
+                                            <ul class="box-content">
+                                                <li><h6 class="title"><a href="blog-single.html">Bake Layers Accesilit Testin Supporte</a></h6></li>
+                                                <li><a href="blog-single.html" class="fx meta-news clr-pri-4"><i class="far fa-calendar-alt"></i><span class="f-rubik">25 nov 2021</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="fx">
+                                            <img src="assets/images/thumbnails/widget4.jpg" alt="Image" class="feature">
+                                            <ul class="box-content">
+                                                <li><h6 class="title"><a href="blog-single.html">Bake Layers Accesilit Testin Supporte</a></h6></li>
+                                                <li><a href="blog-single.html" class="fx meta-news clr-pri-4"><i class="far fa-calendar-alt"></i><span class="f-rubik">25 nov 2021</span></a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+    
+                                <div class="widget widget-tag st-2">
+                                    <h4 class="title-widget fl-ctm-1">best tags<span class="ctm-inner"></span></h4>
+                                    <ul class="list-tag">
+                                        <li><a href="shop-details.html" class="f-rubik active">Technology</a></li>
+                                        <li><a href="shop-details.html" class="f-rubik">service</a></li>
+                                        <li><a href="shop-details.html" class="f-rubik">team</a></li>
+                                        <li><a href="shop-details.html" class="f-rubik">solutions</a></li>
+                                        <li><a href="shop-details.html" class="f-rubik">consultancy</a></li>
+                                        <li><a href="shop-details.html" class="f-rubik">It Company</a></li>
+                                        <li><a href="shop-details.html" class="f-rubik">agency</a></li>
+                                    </ul>
+                                </div>
+    
+                                <div class="widget widget-gallery st-2">
+                                    <h4 class="title-widget fl-ctm-1">photo gallery<span class="ctm-inner"></span></h4>
+                                    <div class="list-gallery fx">
+                                        <div class="box-photo">
+                                            <div class="overlay fx"><i class="fal fa-plus"></i></div>
+                                            <img src="assets/images/thumbnails/widget5.jpg" alt="Image">
+                                        </div>
+                                        <div class="box-photo active">
+                                            <div class="overlay fx"><i class="fal fa-plus"></i></div>
+                                            <img src="assets/images/thumbnails/widget1.jpg" alt="Image">
+                                        </div>
+                                        <div class="box-photo">
+                                            <div class="overlay fx"><i class="fal fa-plus"></i></div>
+                                            <img src="assets/images/thumbnails/widget6.jpg" alt="Image">
+                                        </div>
+    
+                                        <div class="box-photo">
+                                            <div class="overlay fx"><i class="fal fa-plus"></i></div>
+                                            <img src="assets/images/thumbnails/widget7.jpg" alt="Image">
+                                        </div>
+                                        <div class="box-photo">
+                                            <div class="overlay fx"><i class="fal fa-plus"></i></div>
+                                            <img src="assets/images/thumbnails/widget3.jpg" alt="Image">
+                                        </div>
+                                        <div class="box-photo">
+                                            <div class="overlay fx"><i class="fal fa-plus"></i></div>
+                                            <img src="assets/images/thumbnails/widget8.jpg" alt="Image">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!--/inner-sidebar-->
+                    </div>
+                </div>
+            </header>
+             
+            
+            <section class="tf-page-title">
+                <div class="overlay"></div>
+                <div class="overlay-bg"></div>
+                <img src="assets/images/background/img1innerpage.png" class="bg-inner1" alt="">
+                <img src="assets/images/background/img2innerpage.png" class="bg-inner2" alt="">
+                <img src="assets/images/background/img3innerpage.png" class="bg-inner3" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title inner">
+                                <h1 class="title">Contact Us</h1>
+                                <div class="breadcrumbs">
+                                    <ul class="jus-ct">
+                                        <li><a href="index.html" class="f-rubik">Home</a></li>
+                                        <li><p class="breadcrumbs-inner f-rubik">Contact</p></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </section>
+
+            <section class="tf-section tf-faq">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="title-heading st-2">
+                                <div class="sub-heading clr-pri-3 f-mulish">
+                                    <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="77" height="30" viewBox="0 0 77 30">
+                                        <g>
+                                          <image width="77" height="30" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE0AAAAeCAYAAABpE5PpAAAEPklEQVRogd2Ze4hVVRTGf+pNHRtnegxqlonUMJYGY/pXWoFEJpVBTFRDaBbOVmxC/5GUUFJMqQh6MLUjfARBUVGEYi9rqFQU0UrQ8pXvMkcLmbJSZ2TdvlOHy73de+fOmXPv/eCwD+ewz9n7O2utb611enU2NZEGA4F+QFu6m2UF7/PeTe8M17cA48qesC4iHWk3AiOB70tiBzEgHWmfAr8CB8p+911EKmn1wGXAlyWzgxiQStpyjZ+V/c4LQCI0tQKYqPN8SDPia2Wl1wBXSH0D/AYcB3YD3wL7gY64N14IwqRNAi4CjuQgAv2Be3RMkksHOAOcBs6KvEqgT+h+m+LmWuAD4PeiYSNHhEm7S+P6/5l6FTAXeBSoFgGfAJ8D3wG7RFgY9iGuliKPByYA9wMPAu3A28CzwA9xEpEPwqTdprE1zfxLgSeBZrnje8BKWcz5LO8zi9unY62uDQIagNn6AI8AbwHzgYM9S0H+CIRgGDBc51+nPKVBFjQHWK34ZZbyUQ6EZcIvQAswGpgMbJfl2XueSHHnokNA2q0ajwF7dW7C8DrwjoL3GGAG8GM3bqJT5Fv18bDi4TK5+5XFTtp4jZs1mvt8oY2YW96smBUVOmXFo4B1wC0q5cb0PCXZEZAW1JlbFOw3KnDfASwtwA3zxc/A3RKGoUqyb+qhd+eM3hKDGzThkISgWtYVR5JrH2ieRKFSllcfwzoywki7Xm0gwyLgEiW5O2Jem1UnC4Aqxb1hsa7GuRqcszifJO260K0RwL1FQFgAE4VXgMFKhAfEuJYXgT9wLpFQ7AqwSBVB2B0sYz8FnIxnrTwO1Mn6jcBpPb4C5yxMTElmFt6fS2hBAZ7WkQ5nFPMOA3tUR34F7Ix4yeeAB5TLTQU2Aa9G/M5UPARcDLyMRKA9x4kVIrguVD0YjgIfqkpojUhpTyihtue/AGyT0kcP5/oqtqKEPElak9IKc8leoUUMUGFeJRWz43KlAoOUfAbjLB3m2quAJcDf3byhDaoWngPeBcaKzKgxRyLUjPdnCdWeB7tY85mQ1KggNxG5VqT2jYA0w/PK20ys3pfF/xnBe/6Bc1bmPSXvaQkuJ7JMy4YO1ZF2bI1s8f+hU0JQqyrmDdWs3R8SnBuqBkP/ZGfG+397gJn+RhUz2qVkFkvvE3HdW+A7NwT4WB60Hu83hG+XImnop8/t6uc1AmuUlBcO5+qk0KP1Ye5MfWah7hkndqqwX6Ma2RoKj0nJ84dzZkAzgWeUXhxIdn+8/yv1WZn+sJcSTIjelOWhfuBidaBz+RfRT+6+UNaFWlONeH883YRStrQAbfpPMVXdkQlqwf+kuGSu9o1+7nRoz4NF0ES5X5WedULkvRYO/KkoB0sLwxLw6WrLj8x9WrLxugJ4Ce+zJvvlRloYRpq10i1pt6aEJeIWqyxGmdVZzLKqohXvg+ZrdgAXAIwK6LO/4gPOAAAAAElFTkSuQmCC"/>
+                                        </g>
+                                    </svg>
+                                    <span class="inner-sub st-1">Need Any Support</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="77" height="30" viewBox="0 0 77 30">
+                                        <g>
+                                          <image width="77" height="30" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE0AAAAeCAYAAABpE5PpAAAEMUlEQVRoge2Ze4hVVRTGf46WMyWmZvkaNSWfST7I1EINyVQ0kSxsQiyS3JFo/lGhUQSCJokk5aONhijhHyGRkKTlI3JMFKQaBx2o1HS0klSs66ucGVl3vhOnw73XwblPnQ8OZ+acfc/e+zvr8a11mtXNmsUtDe8T79659sAVvP87eqvo1mYsJR4C9ica0ERaclQBfXFuSHREE2nJ4P0x4BzwdXREE2mp8S3QDucGhUc1kZYa23V3SXhUizxb5I3AXnxPYCDQG+gAtAk9x7Lfb8AvwA/AT0BtA+cJSBuDcyV4f4kCJu1OYAowERgLtA/dqwFiIus2oDVQErp/FtgGbNZxOeks3lfhXDVQCowDPqcASesDvA5MA1rJYvYA5TpbxjsO/Bv5nRHXD3gwbjX1RJcB53HuY+B9vK9OMucO4HlgUkBaocS07sBG4DAwU8TMBjoBo4A3gS1ywShhhr+AfcAakdURmCCLexU4gnPLcK5tgt9+o/PjwYV8J605MF9k2Wa/12YHAKuA0zf4XHPhrbLYXsB6YF58HuemRsaW69wd57qS56R1AXYC7wIWgF+QSrfN1qVtFu+P4v1LwOC4xcEmnFsbD/z1938GTmn0aPKYtMEqYcz1vgQekDWkj6wovK8ARgJv6QXtwrl7NWqfzo+Sp6Q9IlHZGVgKPAn8npWZva/B+0XA+HgJBd/hXGmoBjVLzzvSBsmyLDMuAN5Q/MkuvN8uq7tLieC45h+Acy0C0koiWicX6Kp41VrZcElOV+P9QckTE8rv6Gox0L9IWu0i8EEOl3iHNJCp+dUK/rlHPXFPAT1Ca+lnhF0FLENMllvEcrBYI2qIsuXcnJHl3N3xAr2+4ghQLUtbrP/7BhXBCmA5MB34KMtLfRmYAZwEntVLzDT6K2YNxLleCg3dIuVWMvQJ2t1Wo/0DnADu19/ZwMPAbiWkx1QKZQLN9fyp8qgujZhjTWBpVnrMAT6UMn4vC4TdExeScDvwWoYIs2e/Ld1VGrpeo2ripM4mXs8oNMVUdl1WrA9QF++SeP9r+MNKkSzMCBwKVGZgEwGK1XYxsfgZ8HSGhGsrJZVTittHJR/+/K89lOzDSgqEuxy1KhPKVfyOCJUP6YS5ygYRdlAdhEwp/Zg8KK2Iits9aoV0UwegY4YIe0auMTlH2bpRSFQRTNSGrJOwVz2sdMBE4hfAc3KPJ4BjhUHT/5GItCuq/2xD9wEHgFcaWXKZRVWopjuiQvxQOjaQCyQjwoLlcIlNE3orgR/lVi0buM4idUh3q61sWugrYJj6YwWLVO3uP7RpS68L5a6fKh1vEaGVGndVJHVQ0T1CPfVOetZptak3FDJZAa73jaBWFcInykIvSvyW6bgeqqT91qmReFOgoR9WYtI7dph7mbo2NW8xz6zLXPaCLMpczz6VWYvHSLu5AFwD7u/9V73LPFIAAAAASUVORK5CYII="/>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <h2 class="title clr-pri-2">We Are Ready To Help You For 
+                                    Your’s Informations</h2>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="sc-faq wow fadeIn animated" data-wow-delay="0.3ms" data-wow-duration="1200ms">
+                                <div class="image">
+                                    <img src="assets/images/common/sc-faq1.png" alt="Image">
+                                </div>
+                                <div class="content">
+                                    <h4>Supports and Info</h4>
+                                    <p class="desc">
+                                        Edipiscin elitsed eiusmod incididunt dolore magna suspendisse
+                                    </p>
+                                    <a href="#" class="fl-btn st-5">
+                                        <span class="inner">Contact Us</span>
+                                    </a>
+                                </div>
+                            </div> 
+                        </div>
+                        <div class="col-md-4">
+                            <div class="sc-faq active wow fadeIn animated" data-wow-delay="0.3ms" data-wow-duration="1200ms">
+                                <div class="image">
+                                    <img src="assets/images/common/sc-faq2.png" alt="Image">
+                                </div>
+                                <div class="content">
+                                    <h4>News and Updates</h4>
+                                    <p class="desc">
+                                        Edipiscin elitsed eiusmod incididunt dolore magna suspendisse
+                                    </p>
+                                    <a href="#" class="fl-btn st-5">
+                                        <span class="inner">Contact Us</span>
+                                    </a>
+                                </div>
+                            </div> 
+                        </div>
+                        <div class="col-md-4">
+                            <div class="sc-faq wow fadeIn animated" data-wow-delay="0.3ms" data-wow-duration="1200ms">
+                                <div class="image">
+                                    <img src="assets/images/common/sc-faq3.png" alt="Image">
+                                </div>
+                                <div class="content">
+                                    <h4>Events and Programs</h4>
+                                    <p class="desc">
+                                        Edipiscin elitsed eiusmod incididunt dolore magna suspendisse
+                                    </p>
+                                    <a href="#" class="fl-btn st-5">
+                                        <span class="inner">Contact Us</span>
+                                    </a>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>  
+                </div>
+            </section>
+
+            <section class="tf-section tf-contact">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="title-heading">
+                                <div class="sub-heading clr-pri-3 f-mulish">
+                                    <span class="inner-sub">Contact Us</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="77" height="30" viewBox="0 0 77 30">
+                                        <g>
+                                          <image width="77" height="30" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE0AAAAeCAYAAABpE5PpAAAEMUlEQVRoge2Ze4hVVRTGf46WMyWmZvkaNSWfST7I1EINyVQ0kSxsQiyS3JFo/lGhUQSCJokk5aONhijhHyGRkKTlI3JMFKQaBx2o1HS0klSs66ucGVl3vhOnw73XwblPnQ8OZ+acfc/e+zvr8a11mtXNmsUtDe8T79659sAVvP87eqvo1mYsJR4C9ica0ERaclQBfXFuSHREE2nJ4P0x4BzwdXREE2mp8S3QDucGhUc1kZYa23V3SXhUizxb5I3AXnxPYCDQG+gAtAk9x7Lfb8AvwA/AT0BtA+cJSBuDcyV4f4kCJu1OYAowERgLtA/dqwFiIus2oDVQErp/FtgGbNZxOeks3lfhXDVQCowDPqcASesDvA5MA1rJYvYA5TpbxjsO/Bv5nRHXD3gwbjX1RJcB53HuY+B9vK9OMucO4HlgUkBaocS07sBG4DAwU8TMBjoBo4A3gS1ywShhhr+AfcAakdURmCCLexU4gnPLcK5tgt9+o/PjwYV8J605MF9k2Wa/12YHAKuA0zf4XHPhrbLYXsB6YF58HuemRsaW69wd57qS56R1AXYC7wIWgF+QSrfN1qVtFu+P4v1LwOC4xcEmnFsbD/z1938GTmn0aPKYtMEqYcz1vgQekDWkj6wovK8ARgJv6QXtwrl7NWqfzo+Sp6Q9IlHZGVgKPAn8npWZva/B+0XA+HgJBd/hXGmoBjVLzzvSBsmyLDMuAN5Q/MkuvN8uq7tLieC45h+Acy0C0koiWicX6Kp41VrZcElOV+P9QckTE8rv6Gox0L9IWu0i8EEOl3iHNJCp+dUK/rlHPXFPAT1Ca+lnhF0FLENMllvEcrBYI2qIsuXcnJHl3N3xAr2+4ghQLUtbrP/7BhXBCmA5MB34KMtLfRmYAZwEntVLzDT6K2YNxLleCg3dIuVWMvQJ2t1Wo/0DnADu19/ZwMPAbiWkx1QKZQLN9fyp8qgujZhjTWBpVnrMAT6UMn4vC4TdExeScDvwWoYIs2e/Ld1VGrpeo2ripM4mXs8oNMVUdl1WrA9QF++SeP9r+MNKkSzMCBwKVGZgEwGK1XYxsfgZ8HSGhGsrJZVTittHJR/+/K89lOzDSgqEuxy1KhPKVfyOCJUP6YS5ygYRdlAdhEwp/Zg8KK2Iits9aoV0UwegY4YIe0auMTlH2bpRSFQRTNSGrJOwVz2sdMBE4hfAc3KPJ4BjhUHT/5GItCuq/2xD9wEHgFcaWXKZRVWopjuiQvxQOjaQCyQjwoLlcIlNE3orgR/lVi0buM4idUh3q61sWugrYJj6YwWLVO3uP7RpS68L5a6fKh1vEaGVGndVJHVQ0T1CPfVOetZptak3FDJZAa73jaBWFcInykIvSvyW6bgeqqT91qmReFOgoR9WYtI7dph7mbo2NW8xz6zLXPaCLMpczz6VWYvHSLu5AFwD7u/9V73LPFIAAAAASUVORK5CYII="/>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <h2 class="title clr-pri-2 m-b26">Feel Free To Contact Us 
+                                    For More Info</h2>
+                                    <p class="f-mulish">Consectetur adipiscin elitsed eiusmod tempor incidide labore 
+                                        magna aliqua suspendisse gravida commodo</p>
+                            </div>
+                            <div class="wrap-contact">
+                                <div class="fx adress">
+                                    <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="43" height="65" viewBox="0 0 43 65">
+                                        <image id="location" width="43" height="65" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAABBCAYAAABIMl38AAAMFklEQVRogb2aD2xV1R3HP+e+29f/hZaWPwKC4MIofwxDnfhv6uYUQZm66IygJksc06iZTLcsEdFky+KmTqcxZk4niSS6P2hUMvFPBlOGioIgHco/B1QopS1tX9vX9+69Zznn3Pd6++69zwLFb/rLa+8753d+53d+5/fvVkhJNHqAzwALSAIJwAOqgRIgDfQxjVIuQHI2MA2YANQCNuAAHcABzUnwAQ7rSfM5I3ye3UDW560++30uVZEScWzCqrGVlONxE1kWIzkfEZpZHA7/oYyVJFlJL71kToawJVqzyxAsw2OcHmP5GzgWCH+O4BAWj5Dld5rPEIS1Qk+iIDkPl09w+T0O4/RiilzfNI6FcnMcxpLlIWArcH7EqiHEC2vlP+8B3sVhdl7IYxUwigY2OwuHfyP1OsUk0hchGuZ4nwKWaqYnH0rLU5EsjVtJyHcLnihjr9G/PUc/twzpAuW0lDvi4OkkfBrqRSzleVxuYR/oyxfQtE2qYNGE/u23JLgl7wEKL1FuYcdnqMZVNED1FEiOBisJXgYyLZDeC72tZiPJwFnG8ezlZvo5RBu/zLu13BCZLhB2D4to52VKQ3seYOppHwvlAhoWQ93lUDULEqPVQ38F1wxyD0NqK7S/Aa0vQJ9nhsR5EuH78Bp+wFReGfSVbAoIalFNL+30Y0cauvDdi5Jj/LVw6s+hdK6v3latFqQHyh8KAUIxqQAajFr7P4b9D8OBvxqNlcYI7OlpDlXU+aHDF/adQcK8SAnX5Y+/UNA+X2mNT0L9T4Cj4O0PDIiDz8yaaALckaeh6Taz6fKYtVzte19CcH3ONw9cMEEjku2hifhHpgUVcOZqqFoE3qcgM8V9TQgeiCRYMyH1Cmy6BlzfLLzQ4JzJTUeyw4jh5Z30r2OdfJ+/0zl/MYK6H/mCisANHAoJM0/NV3zmPJc37dCaAwHkNzlPI+RGre4GshyOPUllNbOXwqSnwP049PVxI/Et+GIpbHvaJEhRkNqDjMam1WI7yDZukAmQbgGpu5ICOWoCTLoP5OcDF+iESfHZCZOXa/56HS9CBiVXOzfQBJY0nmah9plRx5AFMfl2YBQ4Hf7Wj+Xo40iZXrvmKybfZhKZKDN0tGYXKM0LuZYaKTmAR3XIDJRZVo5AfGcdWGXgdEWc0wnCrgGvD7nuIujpNIEjCBOouoTNREtmOAOX6rwmg2FTGf6oCyFxKjidMRo6QVJ8E5Og7oKBi1YoR5Ya2c9sC5spsSagPE3NTP/kh8tWC8n4LDFi1uAUMkhSR7UptsgwWkbFf893oWXj/fhHxKDhQtqsY/k2GuG6BYyxyVIZstWcsOq5XeUb78kSFMPfrhyIXFFLCSrtyKyKwCTpn0Ns/TMc8Pl7MbL4UAlLj3YbUdpVSUumy8/rinA5YdjQ32nWK4sJvZKMLeGg1mKhnUjfVFP7TMYkvZgdnSD0iSUhtd+sl4xdptMmzY58pl8IFUFatyK+mQnsYJihUkkyyLZPwpVGUHcW/7MpYSsZDuEyNrQjtcvmDZDeDcla6D8aYnLCKB1h+B/YYNaLFtYVko8t0UKGPt7MVwBBUr2Cll7Y+zpY40E6wxsQFD/Fd+9r0NKX602EyWEjab60aAeRYtWgoi8YPVQiseXP4O6H0vrhTWQUP3cfcvOzA+2pwvVVapjmJeV/Lcbr/tU/yXAktCPXr0r2tyPffxASE0EkBtzZcWvUM3wSE5AbH4QD7Wadwuhl3LtkLs+rbpoVaFw8GhqcE1jFhfdWw64/QvlMsMTxC6zmqfmKz64nYMPLhn/U2kau52imU5XmQj7lm7CgUko6Bxe/Piy/96UUcvXDMGUJ9O+EbMpoaKhQCWpJJZROgz0rkauXGd6VMRdL6J8JZGhWgidWXJHfdBZJGVK3MAcrxPM9gzqWT9dCmYM49WJI1pmsSR9raKmA35FgWVA5Gexq5Ed/gFdXmDmVwWgZ8I6m3Fkp+lmZ07SQjw5iWyoturBCWeWAhlUapxojjWchzr0dxs8zbkN2QH8PeM5AKW7ZUKpifq3J4ps3Ijc8CU0fGCErYjTqmO9EDXV4dOQUIeRjBUoQ3InksVj/n3NxR/26f9oFiNMvgXEzoHqML5xt3JISvrsFDm1H7voX7FhnQurIIk0OfGVM5gFxLiuCJybk8gLNOVrgZkZxSuSug0JnAy2IWgtGToDKOkgkwc1ATxscbYYOn1Guax4n5ADvIyJNg9bwIGHfDg2FTi6Wm3lHa2AoEVb6gmf8I5S59DLQiC5m0zkkzEUW3SygnzX5NDUvbGFZJcwRy7WsYT/zdQPi60Cu4zOZtWIUl+U3HBQtUrNKE0eokx/S5rc/vx50gTiHeqbRFnUSQt4ZemZQpttSd0jJ4yc1lcU3F+Wye7iDNE9oDUdAyAfDD4OQQvf8Z51UgVXAOZUtYhZz8h2pCNj6QkQh17mDq6VgV9SxDAv8QCDGcQ2n+xc0BrbeVTF47KacFSRZUdSVHQ+k8dUiw69Yy15eiwkSPoS8P/QsDKF9vKoopunvhkPL0r/IDp+KnczS/toqztuOs4+8UP7LC+GxyMuaPumwoRSsFhZpbdZ9dcVvczD0bEBQYdyJ3nE5n4lK7pflPFCM4ZAgjFZFE79gG3vyuV5DIJxHQMjdG8NPVQB310OqBtqbYec62NEEvd14Hluo4Ywi9VJxiHzg+dB6hrMZUwvz50HjdJg9ESo7IBH9skHI2ObFmyDHgVCp0TboroMta2DNW3gdm9pJUqsFjpseBcvvRXRzRMw9q0HMvhKmng7jTwPG+BmMKv1HRDKOEbYPMv+A7gawHfMWvupMsEoWIUq/K195YIl8YdVITil+IUJQSx0Ccf2SdnH1vavAeYfMl6s52AbV48ByoeIgJKuOVdi/Q2oclEjIHvgxXtXd+iVJRQWU1+M9tBg+2AkTh2gOSqv7QcxrRCxbaV7k9ar4yn/JOI9QPvYZdYsp3w/J6khhI/p1GHVZKqHunk6271288mfAbdRSpbr0Swzr5vuhVqgcgsjKOEjSf01WbyNuXg5eD/Qc9e1XTKfU+hMy9R5OT6NO2GMQI6zqctuX4nRuw02dl3eA0u+gtO6DMY1YS+4w3iIdUewFi760MUdryV1Q/w04csC80NMlk9TtFtyec3F6tuEkv2+adNkQCdm1abCc5q1HI9mW7eZNYdR+VPVWArWTkE/chlzzoUrtos1BTd8L4qp5iJ8+Dh1fgOsUMXbdl1dlR1M4Rex6v+CJBT1bdyFKpmpTiIPnwsgGyKTx7rkRDqXMhQ72zBLmQjG+GuuhVWCXQOcRsIpUxEqjlO2h+pyphZWzZVL8AGUPL0AkpuabGXGkzKG9BapGY916j0lAugPVsPT/dsG69V6oHAUdh828OJ655ofITqHnvStIKV8/QJY5pwBJOT/X5w81KAopYUHrHpgzH3Ht5dBcYK/NIH54OZxxmRmXsMI8QuSv62UXFtqsTefWwceQSDZgl5mGxFCgNpb6ErH4Z8hPtsDmQzBF/ysAzBmLuPFuSDWjQp9pb34VpJ+eWvV4g8dbjChhgFSdb7XhFnYdipDi190Bto1113JoSCI3oz+tO+/Tz+n23VQxPkFSy5c4rVSloao/T0J2Pjv4JjrWAjKJ1xBhp1wUSnMNY2FvE/L9JsS3Z8Bp06H1kOnGDBXKZlUZX9K9ENt7Peg1hOx8aTAXJWR3/26ENyXOC8dCCTyyDsproK8LjrYfm6AKbhrKG/ZS2zhF+99AJLMRvaHxVMor6XO3a5tRbiYyJEdA2WRnhyH8v4c81xR8uv3kll5FuiE8RObbiEF40Fb1PfrtVxHpsqFdjOOFn8CqTdmWg2svJJV9Axmut8KuS5GbhUTtW5SVz8TqewtHmLCoEXEhToj8totnryPhzaDEfUP3ykqqQhRjUMLn4ewmkbmUiuyPsKyN2iZ1i52ItvtQiEAAyPFwPkJU3ETJmIvwnM8HTFSEKD7F0V1q3+bKvRdBvEivdyGWdR3CuwSYPmhzea1HbDzHS7s6PXYnuG+D9Tck6jOyh12IIsIGtZy32fUg1+u800vMAjkXIWcgZaOf6qt/7FKZs+KrXl2kwGtBisPYThOe04So30SibCtZldzmGmk5cygC4P+74Go0nVp5gAAAAABJRU5ErkJggg=="/>
+                                      </svg>
+                                    </div>
+                                    <div class="content">
+                                        <p>Address</p>
+                                        <h4>55 Main Street, New York</h4>
+                                    </div>
+                                </div>
+                                <div class="fx Email">
+                                    <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="51" viewBox="0 0 60 51">
+                                        <image id="chat_1_" data-name="chat (1)" width="60" height="51" xlink:href="data:img/png;base64,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"/>
+                                      </svg>                                      
+                                    </div>
+                                    <div class="content">
+                                        <p>Email Address</p>
+                                        <h4>support@gmail.com</h4>
+                                    </div>
+                                </div>
+                                <div class="fx phone">
+                                    <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 60 60">
+                                        <image id="phone-call" width="60" height="60" xlink:href="data:img/png;base64,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"/>
+                                      </svg>                                      
+                                    </div>
+                                    <div class="content">
+                                        <p>Hotline</p>
+                                        <h4>+012 (345) 678</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="image text-right p-t12 wow fadeIn animated" data-wow-delay="0.3ms" data-wow-duration="1200ms">
+                                <img src="assets/images/common/01-contact.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </section>
+
+            <section>
+                <div class="tf-section map">
+                    <div class="flat-map">
+                        <iframe class="map-content wow fadeInUp   animated" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4457.30210514409!2d144.9550716623184!3d-37.818421643591336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4dd5a05d97%3A0x3e64f855a564844d!2s121%20King%20St%2C%20Melbourne%20VIC%203000%2C%20%C3%9Ac!5e0!3m2!1svi!2s!4v1631871760998!5m2!1svi!2s" width="1720" height="655" style="border: 0px; visibility: visible; animation-name: fadeInUp;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tf-section tf-message"> 
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-message">
+                                <h2 class="heading">
+                                    Leave a Message
+                                </h2>
+                                <form action="contact/contact-process4.php" method="post" id="commentform" class="comment-form">
+                                    <div class="fx flex-wrap">
+                                        <fieldset class="name">
+                                            <input type="text" placeholder="Full Name Here" required name="name" class="name" id="name">
+                                        </fieldset>
+                                        <fieldset class="email">
+                                            <input type="email" placeholder="Email Address" required name="mail" class="mail" id="mail">
+                                        </fieldset>
+                                        <fieldset class="phone">
+                                            <input type="number" placeholder="Phone Number" required name="number" class="number" id="number">
+                                        </fieldset>
+                                        <fieldset class="select-wrap" role="group" >
+                                            <div class="select">
+                                            <select name="subject" id="subject">
+                                            <option value="Please Select">Subject</option>
+                                            <option value="services1">Subject 01</option>
+                                            <option value="services2">Subject 02</option>
+                                            </select>
+                                            </div>
+                                        </fieldset>
+                                        <fieldset  class="message">                                   
+                                             <textarea placeholder="Write Message" rows="5" tabindex="4" name="messagewr2" class="messagewr2" id="messagewr2"></textarea>
+                                        </fieldset>
+                                        <div class="wrap-btn">
+                                            <button type="submit" class="fl-btn st-6"><span class="inner">Send message</span></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer id="footer">
+                <section class="tf-subcribe">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12 col-12">
+                                <div class="subcribe-wp">
+                                    <h2 class="title">Subscribe Our Newsletter</h2>
+                                    <p class="sub f-mulish">Beet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-12">
+                                <div class="subcribe-form fx" id="subscribe-form">
+                                    <form action="#">
+                                        <input type="email" id="subscribe-email" placeholder="Email Address">
+                                        <button class="fl-btn st-7" id="subscribe-button"><span class="inner">Subscribe</span></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="footer-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="widget-footer">
+                                    <div class="widget widget-logo">
+                                        <div class="logo-bottom" id="logo-footer">
+                                            <a href="index.html"><img src="assets/images/logo/logofootert.png" alt="kinco"></a>
+                                        </div>
+                                        <p class="wrap f-mulish">Sit amet consectetur adipiscing elit sed do eiusmod teminci idunt ut labore et dolore magna</p>
+                                        <div class="list-contact">
+                                            <ul>
+                                                <li class="fx"><span><i class="far fa-map-marker-alt"></i> 55 Main Street, New York</span></li>
+                                                <li class="fx"><a href="mailto:hotline@gmail.com"><i class="far fa-envelope"></i> hotline@gmail.com</a></li>
+                                                <li class="fx"><a href="tel:012345678"><i class="fal fa-phone"></i> +012 (345) 678</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="widget widget-business">
+                                       <div class="inner">
+                                            <div class="op-time">
+                                                <h4 class="title-widget">opening hours</h4>
+                                                <ul>
+                                                    <li><span class="f-mulish">Sunday - Friday</span></li>
+                                                    <li><span class="f-mulish">08 am - 05 pm</span></li>
+                                                </ul>
+                                            </div>
+                                            <div class="cls-time">
+                                                <p>Every Satarday and Govt Holiday</p>
+                                                <h4 class="title-widget">closed</h4>
+                                            </div>
+                                       </div>
+                                    </div>
+                                    <div class="widget widget-link">
+                                        <h4 class="title-widget">Our Program</h4>
+                                        <ul class="list-link">
+                                            <li class="fx"><a href="program.html" class="wd-ctm f-mulish">Arts & Drawing</a></li>
+                                            <li class="fx"><a href="program.html" class="wd-ctm f-mulish">Computer Engineering </a></li>
+                                            <li class="fx"><a href="program.html" class="wd-ctm f-mulish">Digital Mathematics</a></li>
+                                            <li class="fx"><a href="program.html" class="wd-ctm f-mulish">Physical Exercise</a></li>
+                                            <li class="fx"><a href="program.html" class="wd-ctm f-mulish">General Science</a></li>
+                                            <li class="fx"><a href="program.html" class="wd-ctm f-mulish">English Basic</a></li>
+                                            <li class="fx"><a href="program.html" class="wd-ctm f-mulish">Social Science</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="widget widget-news st-3">
+                                        <h4 class="title-widget">recent news</h4>
+                                        <ul class="list-news">
+                                            <li class="fx">
+                                                <img src="assets/images/thumbnails/widget9.jpg" alt="Image" class="feature">
+                                                <ul class="box-content">
+                                                    <li><h6 class="title"><a href="blog-grid.html">Useful Code Extened End Developers</a></h6></li>
+                                                    <li><a href="blog-grid.html" class="fx meta-news clr-pri-6"><i class="far fa-calendar-alt"></i>25 dec 2021</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="fx">
+                                                <img src="assets/images/thumbnails/widget10.jpg" alt="Image" class="feature">
+                                                <ul class="box-content">
+                                                    <li><h6 class="title"><a href="blog-grid.html">Useful Code Extened End Developers</a></h6></li>
+                                                    <li><a href="blog-grid.html" class="fx meta-news clr-pri-6"><i class="far fa-calendar-alt"></i>25 dec 2021</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="footer-bottom jus-ct">
+                                    <p class="copy-right">Copyright © 2022, Kinco - Kindergarten HTML Template. Designed by <a href="https://themeforest.net/user/themesflat/portfolio">Themesflat</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+    </div>
+    </div>
+    <!-- /#wrapper -->
+
+    <a id="scroll-top"></a>
+
+    <!-- Javascript -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/plugin.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/owl.carousel2.thumbs.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/shortcodes.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/jquery-validate.js"></script>
+</body>
+
+</html>
