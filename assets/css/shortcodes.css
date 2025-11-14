@@ -700,8 +700,8 @@
 }
 
 .inner-page .bg-inner1 {
-    top: -45px;
-    left: -8px;
+    top: -54px;
+    left: -67px;
     max-width: 23%;
 }
 
@@ -3402,7 +3402,7 @@
 }
 
 .inner-page .tf-feedback {
-    background: url(../images/background/bg-fb2.png) center center no-repeat;
+    background: url(../images/background/bg-testimonial.png) center center no-repeat;
     background-size: cover;
     padding:220px 0 150px;
     margin-bottom: -35px;
