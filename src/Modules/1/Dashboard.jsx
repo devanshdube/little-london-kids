@@ -13,6 +13,7 @@ import {
   Phone,
   GraduationCap,
   Handshake,
+  Megaphone,
 } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../Redux/user/userSlice";
@@ -27,6 +28,8 @@ import GalleryUploader from "./Content/GalleryUploader";
 import ContactUsHistory from "./Content/ContactUsHistory";
 import AdmissionHistory from "./Content/AdmissionHistory";
 import FranchiseHistory from "./Content/FranchiseHistory";
+import NewsEventsContent from "./Content/NewsEventsContent";
+import NewsEventsHistory from "./Content/NewsEventsHistory";
 
 export default function Dashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -57,6 +60,8 @@ export default function Dashboard() {
     },
     { id: "gallery", label: "Gallery", icon: Images },
     { id: "Franchise", label: "Franchise", icon: Handshake },
+    { id: "NewsEvents", label: "News-Events", icon: Megaphone },
+    { id: "NewsEventsHistory", label: "News-Events-History", icon: Megaphone },
     { id: "dashboard", label: "Dashboard", icon: Home },
     { id: "users", label: "Users", icon: Users },
     { id: "payment", label: "Payment", icon: IndianRupee },
@@ -75,6 +80,10 @@ export default function Dashboard() {
         return <GalleryUploader />;
       case "Franchise":
         return <FranchiseHistory />;
+      case "NewsEvents":
+        return <NewsEventsContent />;
+      case "NewsEventsHistory":
+        return <NewsEventsHistory />;
       case "dashboard":
         return <DashboardContent />;
       case "users":

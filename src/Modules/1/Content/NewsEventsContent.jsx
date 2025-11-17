@@ -9,8 +9,6 @@ export default function NewsEventsContent() {
   const [file, setFile] = useState(null);
   const [filePreview, setFilePreview] = useState(null);
 
-  const [projectId, setProjectId] = useState(null);
-
   const [isSubmittingProject, setIsSubmittingProject] = useState(false);
   const [message, setMessage] = useState(null);
   const [error, setError] = useState(null);
@@ -86,9 +84,8 @@ export default function NewsEventsContent() {
       });
 
       if (res?.data?.status === "Success" || res?.status === 201) {
-        const insertedId = res?.data?.insertedId || res?.data?.data?.id || null;
+        // const insertedId = res?.data?.insertedId || res?.data?.data?.id || null;
         setMessage("Project created successfully.");
-        setProjectId(insertedId);
         setTitle("");
         setFile(null);
         setFilePreview(null);
@@ -241,33 +238,13 @@ export default function NewsEventsContent() {
         </form>
       </div>
 
-      {/* Project Details - show when we have a projectId returned */}
-      <div className="mt-6 bg-white shadow rounded-lg p-6">
-        <h3 className="text-md font-semibold mb-2">Add Project Details</h3>
-        <p className="text-sm text-gray-500 mb-3">
-          After creating a project you'll get an ID. Enter description and
-          submit.
-        </p>
-
-        <div className="mb-3">
-          <label className="block text-sm text-gray-700 mb-1">Project ID</label>
-          <input
-            type="text"
-            value={projectId ?? ""}
-            onChange={(e) => setProjectId(e.target.value)}
-            placeholder="Project ID (will be filled automatically)"
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
-          />
-        </div>
-      </div>
-
       {/* Helpful tips */}
-      <div className="mt-4 text-xs text-gray-500">
+      {/* <div className="mt-4 text-xs text-gray-500">
         <p>
           Tip: If server returns insertedId in response it will appear in
           Project ID field automatically.
         </p>
-      </div>
+      </div> */}
     </div>
   );
 }
