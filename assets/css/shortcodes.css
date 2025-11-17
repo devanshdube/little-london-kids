@@ -476,7 +476,7 @@
 
 /* tf-section */
 .tf-section {
-  padding: 130px 0;
+  padding: 0px 0;
   background-size: cover;
 }
 
@@ -604,7 +604,7 @@
   height: 100%;
   top: 0;
   left: 0;
-  background: url(../images/thumbnails/studying-classroom.jpg) center center
+  background: url(../images/thumbnails/banner-about.jpg) center center
     no-repeat;
   background-size: cover;
   -webkit-mask-image: url(../images/background/mask3.png);
@@ -700,8 +700,8 @@
 }
 
 .inner-page .bg-inner1 {
-  top: -45px;
-  left: -8px;
+  top: -55px;
+  left: -70px;
   max-width: 23%;
 }
 
@@ -1161,7 +1161,7 @@
 
 /* style 2*/
 .fl-subcribe {
-  background-image: url(../images/background/bg-subcribe.png);
+  background-image: url(../images/background/addmission-elligible-bg.png);
   background-repeat: no-repeat;
   background-position: center center;
   padding: 70px 277px 98px 288px;
@@ -2509,6 +2509,12 @@
   background-position: center center;
   background-size: cover;
 }
+.tf-sc-about2 {
+  background-image: url(../images/background/addmission-bg-two.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
 
 .sc-about-1 {
   background: var(--primary-color1);
@@ -2566,7 +2572,7 @@
 
 /* style 2*/
 .tf-section.tf-sc-about2 {
-  padding-top: 110px;
+  padding-top: 250px;
 }
 
 .feature-about2 {
@@ -3396,7 +3402,7 @@
 }
 
 .inner-page .tf-feedback {
-  background: url(../images/background/bg-fb2.png) center center no-repeat;
+  background: url(../images/background/bg-testimonial.png) center center no-repeat;
   background-size: cover;
   padding: 220px 0 150px;
   margin-bottom: -35px;
@@ -4187,7 +4193,7 @@
   box-shadow: 0px 10px 60px 0px rgba(124, 124, 124, 0.15);
   position: relative;
   overflow: hidden;
-  padding-top: 164px;
+  padding-top: 200px;
   margin-bottom: 60px;
 }
 
@@ -4246,10 +4252,10 @@
   padding: 25px 85px 29px 44px;
 }
 
-.sc-program.active .content,
+/* .sc-program.active .content,
 .sc-program:hover .content {
   padding-bottom: 74px;
-}
+} */
 
 .tf-section.tf-program {
   background-color: rgb(252, 249, 244);
