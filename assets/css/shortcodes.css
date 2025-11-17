@@ -476,7 +476,7 @@
 
 /* tf-section */
 .tf-section {
-  padding: 0px 0;
+  padding: 130px 0;
   background-size: cover;
 }
 
@@ -604,8 +604,7 @@
   height: 100%;
   top: 0;
   left: 0;
-  background: url(../images/thumbnails/banner-about.jpg) center center
-    no-repeat;
+  background: url(../images/thumbnails/banner-about.jpg) center center no-repeat;
   background-size: cover;
   -webkit-mask-image: url(../images/background/mask3.png);
   mask-image: url(../images/background/mask3.png);
@@ -2504,17 +2503,17 @@
 }
 
 .tf-sc-about1 {
-  background-image: url(../images/background/bg-aboutus-1.png);
+  background-image: url(../images/background/bg-aboutus-1.05948b98.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
 }
-.tf-sc-about2 {
-  background-image: url(../images/background/addmission-bg-two.png);
+/* .tf-sc-about2 {
+  background-image: url(../images/background/bg-aboutus-1.05948b98.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-}
+} */
 
 .sc-about-1 {
   background: var(--primary-color1);
@@ -2572,7 +2571,7 @@
 
 /* style 2*/
 .tf-section.tf-sc-about2 {
-  padding-top: 250px;
+  padding-top: 110px;
 }
 
 .feature-about2 {
@@ -3402,7 +3401,8 @@
 }
 
 .inner-page .tf-feedback {
-  background: url(../images/background/bg-testimonial.png) center center no-repeat;
+  background: url(../images/background/bg-testimonial.png) center center
+    no-repeat;
   background-size: cover;
   padding: 220px 0 150px;
   margin-bottom: -35px;
