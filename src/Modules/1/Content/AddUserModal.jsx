@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { X, User, Upload, Users } from "lucide-react";
 import axios from "axios";
 
-const API_URL = "https://ngo-admin.doaguru.com/auth/api/ngo/login/register";
+const API_URL = "http://localhost:5555/auth/api/ngo/login/register";
 
 const AddUserModal = ({ onClose, onUserAdded }) => {
   const [form, setForm] = useState({

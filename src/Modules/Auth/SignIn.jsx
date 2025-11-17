@@ -40,7 +40,7 @@ const SignIn = () => {
       setLoading(true);
 
       const response = await axios.post(
-        "https://ngo-admin.doaguru.com/auth/api/ngo/login/login",
+        "http://localhost:5555/auth/api/ngo/login/login",
         formData
       );
 
@@ -104,7 +104,7 @@ const SignIn = () => {
 
   //     // 👇 Update this URL according to your backend
   //     const response = await axios.post(
-  //       "https://ngo-admin.doaguru.com/auth/api/ngo/login/login",
+  //       "http://localhost:5555/auth/api/ngo/login/login",
   //       formData
   //     );
 

@@ -4,7 +4,7 @@ import SmartAlert from "../../../Components/Alerts/SmartAlert";
 import { UploadCloud } from "lucide-react";
 import QRCode from "./../../../assets/upi-qr-code.jpg";
 
-const API_URL = "https://ngo-admin.doaguru.com/auth/api/ngo/post/postPayment";
+const API_URL = "http://localhost:5555/auth/api/ngo/post/postPayment";
 
 const PaymentContent = () => {
   // form fields

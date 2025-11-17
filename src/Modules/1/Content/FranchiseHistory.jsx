@@ -1,25 +1,26 @@
+// FranchiseHistory.jsx (replace PaymentHistory)
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import axios from "axios";
-import { Edit, Trash2, UserPlus, Search, X } from "lucide-react";
+import { Search, X } from "lucide-react";
 import InputField from "../../../Components/InputField";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logout as logoutAction } from "./../../../Redux/user/userSlice";
 
 const API_URL =
-  "https://ngo-admin.doaguru.com/auth/api/ngo/get/getPaymentTransactions";
-const CHUNK_SIZE = 5;
+  "http://localhost:5555/auth/api/ngo/get/getSchoolFranchiseQuerys";
+const CHUNK_SIZE = 8;
 
-const PaymentHistory = () => {
+const FranchiseHistory = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const reduxToken = useSelector((state) => state.user.token);
-  const [allPayments, setAllPayments] = useState([]);
-  const [displayedPayments, setDisplayedPayments] = useState([]);
-  const [filteredPayments, setFilteredPayments] = useState([]);
+
+  const [allQueries, setAllQueries] = useState([]);
+  const [displayed, setDisplayed] = useState([]);
+  const [filtered, setFiltered] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [methodFilter, setMethodFilter] = useState("");
   const [dateFilter, setDateFilter] = useState("");
   const [hasMore, setHasMore] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
@@ -52,14 +53,13 @@ const PaymentHistory = () => {
     }
   };
 
-  const fetchPayments = useCallback(async () => {
+  const fetchQueries = useCallback(async () => {
     try {
       setIsFetching(true);
       setError(null);
 
       const token = getToken();
       if (!token) {
-        // no token -> redirect to signin
         dispatch(logoutAction());
         localStorage.removeItem("token");
         navigate("/signin", { replace: true });
@@ -69,65 +69,92 @@ const PaymentHistory = () => {
       const authHeader = { headers: { Authorization: `Bearer ${token}` } };
 
       const res = await axios.get(API_URL, { ...authHeader, timeout: 15000 });
+
       if (res?.data?.status === "Success" && Array.isArray(res.data.data)) {
-        const payments = res.data.data.map((p) => ({
-          ...p,
-          createdDate: p.created_at ? p.created_at.slice(0, 10) : null,
+        const queries = res.data.data.map((q) => ({
+          ...q,
+          createdDate: q.created_at ? q.created_at.slice(0, 10) : null,
         }));
-        setAllPayments(payments);
+        setAllQueries(queries);
+        filteredRef.current = queries;
+        displayedRef.current = queries.slice(0, CHUNK_SIZE);
+        setFiltered(queries);
+        setDisplayed(queries.slice(0, CHUNK_SIZE));
+        setHasMore(queries.length > CHUNK_SIZE);
       } else {
-        setError("API returned unexpected data.");
-        setAllPayments([]);
+        const alt = Array.isArray(res?.data?.queries)
+          ? res.data.queries
+          : Array.isArray(res?.data?.querys)
+          ? res.data.querys
+          : null;
+        if (Array.isArray(alt)) {
+          const queries = alt.map((q) => ({
+            ...q,
+            createdDate: q.created_at ? q.created_at.slice(0, 10) : null,
+          }));
+          setAllQueries(queries);
+          filteredRef.current = queries;
+          displayedRef.current = queries.slice(0, CHUNK_SIZE);
+          setFiltered(queries);
+          setDisplayed(queries.slice(0, CHUNK_SIZE));
+          setHasMore(queries.length > CHUNK_SIZE);
+        } else {
+          setError("API returned unexpected data.");
+          setAllQueries([]);
+          setFiltered([]);
+          setDisplayed([]);
+          setHasMore(false);
+        }
       }
     } catch (err) {
       console.error("Fetch error:", err);
       handleAuthError(err);
       setError(err?.response?.data?.message || err.message || "Network error");
-      setAllPayments([]);
+      setAllQueries([]);
+      setFiltered([]);
+      setDisplayed([]);
+      setHasMore(false);
     } finally {
       setIsFetching(false);
     }
+  }, [dispatch, navigate, reduxToken]);
+
+  useEffect(() => {
+    fetchQueries();
   }, []);
 
   useEffect(() => {
-    fetchPayments();
-  }, [fetchPayments]);
+    let list = allQueries.slice();
 
-  // Apply filters whenever data or filter inputs change
-  useEffect(() => {
-    // start from allPayments
-    let filtered = allPayments.slice();
-
-    // search: name, phone, amount
     if (searchTerm.trim()) {
       const q = searchTerm.trim().toLowerCase();
-      filtered = filtered.filter((p) => {
-        const name = String(p.name || "").toLowerCase();
-        const phone = String(p.phone || "").toLowerCase();
-        const amount = String(p.amount || "").toLowerCase();
-        return name.includes(q) || phone.includes(q) || amount.includes(q);
+      list = list.filter((item) => {
+        const name = String(item.name || "").toLowerCase();
+        const phone = String(item.phone || "").toLowerCase();
+        const email = String(item.email || "").toLowerCase();
+        const message = String(item.message || "").toLowerCase();
+        return (
+          name.includes(q) ||
+          phone.includes(q) ||
+          email.includes(q) ||
+          message.includes(q)
+        );
       });
     }
 
-    // payment method filter (exact match)
-    if (methodFilter) {
-      filtered = filtered.filter((p) => p.paymentMethod === methodFilter);
-    }
-
-    // date filter (createdDate is yyyy-mm-dd)
     if (dateFilter) {
-      filtered = filtered.filter((p) => p.createdDate === dateFilter);
+      list = list.filter((item) => item.createdDate === dateFilter);
     }
 
-    filteredRef.current = filtered;
-    displayedRef.current = filtered.slice(0, CHUNK_SIZE);
+    filteredRef.current = list;
+    displayedRef.current = list.slice(0, CHUNK_SIZE);
 
-    setFilteredPayments(filtered);
-    setDisplayedPayments(filtered.slice(0, CHUNK_SIZE));
-    setHasMore(filtered.length > CHUNK_SIZE);
-  }, [allPayments, searchTerm, methodFilter, dateFilter]);
+    setFiltered(list);
+    setDisplayed(list.slice(0, CHUNK_SIZE));
+    setHasMore(list.length > CHUNK_SIZE);
+  }, [allQueries, searchTerm, dateFilter]);
 
-  // Load more data (append next chunk)
+  // Load more chunk
   const loadMore = useCallback(() => {
     if (isLoading || !hasMore) return;
     setIsLoading(true);
@@ -141,16 +168,15 @@ const PaymentHistory = () => {
       if (nextChunk.length > 0) {
         const updated = [...displayedRef.current, ...nextChunk];
         displayedRef.current = updated;
-        setDisplayedPayments(updated);
+        setDisplayed(updated);
         setHasMore(updated.length < filteredRef.current.length);
       } else {
         setHasMore(false);
       }
       setIsLoading(false);
-    }, 350); // small debounce to mimic loading
+    }, 300);
   }, [isLoading, hasMore]);
 
-  // Intersection observer for infinite scroll
   useEffect(() => {
     const scrollContainer = document.querySelector(".user-scroll-container");
     const observer = new IntersectionObserver(
@@ -167,12 +193,12 @@ const PaymentHistory = () => {
 
     return () => {
       if (target) observer.unobserve(target);
+      observer.disconnect();
     };
   }, [hasMore, isLoading, loadMore]);
 
   const handleReset = () => {
     setSearchTerm("");
-    setMethodFilter("");
     setDateFilter("");
   };
 
@@ -182,30 +208,25 @@ const PaymentHistory = () => {
         <div className="p-4 border-b">
           <div className="flex justify-between items-center mb-4">
             <h3 className="text-xl font-bold text-gray-800">
-              All Transactions
+              Franchise History
             </h3>
 
             <div className="flex items-center gap-3">
               <button
-                onClick={() => fetchPayments()}
+                onClick={() => fetchQueries()}
                 disabled={isFetching}
                 className="px-3 py-2 bg-gray-100 rounded hover:bg-gray-200 text-sm"
               >
                 {isFetching ? "Refreshing..." : "Refresh"}
               </button>
-
-              {/* <button className="flex items-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700">
-                <UserPlus size={20} />
-                Add
-              </button> */}
             </div>
           </div>
 
-          {/* Search and Filters */}
+          {/* Search & Filters */}
           <div className="space-y-4">
             <div className="relative">
               <InputField
-                placeholder="Search by name, phone or amount..."
+                placeholder="Search by name, phone, email or message..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 icon={Search}
@@ -213,17 +234,6 @@ const PaymentHistory = () => {
             </div>
 
             <div className="flex flex-wrap gap-3 items-center">
-              <select
-                value={methodFilter}
-                onChange={(e) => setMethodFilter(e.target.value)}
-                className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
-              >
-                <option value="">All Methods</option>
-                <option value="UPI">UPI</option>
-                <option value="Cash">Cash</option>
-                <option value="Net Banking">Net Banking</option>
-              </select>
-
               <input
                 type="date"
                 value={dateFilter}
@@ -231,7 +241,7 @@ const PaymentHistory = () => {
                 className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
               />
 
-              {(searchTerm || methodFilter || dateFilter) && (
+              {(searchTerm || dateFilter) && (
                 <button
                   onClick={handleReset}
                   className="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200"
@@ -242,13 +252,13 @@ const PaymentHistory = () => {
               )}
 
               <span className="text-sm text-gray-600 ml-auto">
-                Showing {displayedPayments.length} of {filteredPayments.length}
+                Showing {displayed.length} of {filtered.length}
               </span>
             </div>
           </div>
         </div>
 
-        {/* Table container */}
+        {/* Table */}
         <div
           className="overflow-x-auto user-scroll-container"
           style={{ maxHeight: "520px", overflowY: "auto" }}
@@ -260,144 +270,81 @@ const PaymentHistory = () => {
                   Name
                 </th>
                 <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                  Email
+                </th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">
                   Phone
                 </th>
                 <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                  Amount
-                </th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                  Method
-                </th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                  Bank / Branch
-                </th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                  PAN
+                  Message
                 </th>
                 <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">
                   Date
                 </th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                  Receipt
-                </th>
-                {/* <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                  Actions
-                </th> */}
               </tr>
             </thead>
 
             <tbody className="divide-y divide-gray-200 bg-white">
-              {displayedPayments.map((p) => (
-                <tr key={p.id} className="hover:bg-gray-50">
+              {displayed.map((q) => (
+                <tr key={q.id} className="hover:bg-gray-50 align-top">
                   <td className="px-4 py-3 whitespace-nowrap">
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white text-sm">
-                        {p.name ? p.name[0] : "U"}
-                      </div>
                       <div>
-                        <div className="font-medium">{p.name}</div>
+                        <div className="font-medium text-gray-800">
+                          {q.name}
+                        </div>
                         <div className="text-xs text-gray-500">
-                          {p.remarks || ""}
+                          {q.id ? `#${q.id}` : ""}
                         </div>
                       </div>
                     </div>
                   </td>
 
                   <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-600">
-                    {p.phone}
-                  </td>
-
-                  <td className="px-4 py-3 whitespace-nowrap text-sm font-medium">
-                    ₹{Number(p.amount).toLocaleString()}
+                    {q.email}
                   </td>
 
                   <td className="px-4 py-3 whitespace-nowrap text-sm">
-                    {p.paymentMethod}
+                    <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded text-sm">
+                      {q.phone}
+                    </span>
                   </td>
 
-                  <td className="px-4 py-3 whitespace-nowrap text-sm">
-                    {p.bankName ? (
-                      <div>
-                        <div>{p.bankName}</div>
-                        <div className="text-xs text-gray-500">
-                          {p.branchName}
-                        </div>
-                      </div>
-                    ) : (
-                      <div className="text-xs text-gray-500">—</div>
-                    )}
-                  </td>
-
-                  <td className="px-4 py-3 whitespace-nowrap text-sm">
-                    {p.panNo || "—"}
+                  <td className="px-4 py-3 whitespace-normal text-sm text-gray-700 max-w-[30ch]">
+                    <div className="text-sm truncate" title={q.message}>
+                      {q.message}
+                    </div>
                   </td>
 
                   <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-600">
-                    {p.createdDate || (p.created_at || "").slice(0, 10)}
+                    {q.createdDate || (q.created_at || "").slice(0, 10)}
                   </td>
-
-                  <td className="px-4 py-3 whitespace-nowrap text-sm">
-                    {p.screenshot ? (
-                      <a
-                        href={p.screenshot}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-2"
-                      >
-                        <img
-                          src={p.screenshot}
-                          alt="receipt"
-                          className="w-14 h-10 object-cover rounded border"
-                        />
-                        <span className="text-xs text-blue-600">View</span>
-                      </a>
-                    ) : (
-                      <span className="text-xs text-gray-400">No</span>
-                    )}
-                  </td>
-
-                  {/* <td className="px-4 py-3 whitespace-nowrap">
-                    <div className="flex gap-2">
-                      <button
-                        className="p-1 text-blue-600 hover:bg-blue-50 rounded"
-                        title="Edit"
-                      >
-                        <Edit size={16} />
-                      </button>
-                      <button
-                        className="p-1 text-red-600 hover:bg-red-50 rounded"
-                        title="Delete"
-                      >
-                        <Trash2 size={16} />
-                      </button>
-                    </div>
-                  </td> */}
                 </tr>
               ))}
             </tbody>
           </table>
 
-          {/* loading spinner */}
+          {/* loading */}
           {isLoading && (
             <div className="flex justify-center py-4">
               <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-purple-600"></div>
             </div>
           )}
 
-          {/* intersection observer target */}
+          {/* observer target */}
           <div ref={observerTarget} className="h-4 bg-transparent" />
 
           {/* end message */}
-          {!hasMore && displayedPayments.length > 0 && (
+          {!hasMore && displayed.length > 0 && (
             <div className="text-center py-4 text-gray-500 text-sm">
-              No more transactions to load
+              No more queries to load
             </div>
           )}
 
           {/* no results */}
-          {displayedPayments.length === 0 && !isFetching && (
+          {displayed.length === 0 && !isFetching && (
             <div className="text-center py-8 text-gray-500">
-              No transactions found
+              No queries found
             </div>
           )}
 
@@ -411,4 +358,4 @@ const PaymentHistory = () => {
   );
 };
 
-export default PaymentHistory;
+export default FranchiseHistory;

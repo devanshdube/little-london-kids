@@ -6,9 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logout as logoutAction } from "./../../../Redux/user/userSlice";
 
-const API_URL = "https://ngo-admin.doaguru.com/auth/api/ngo/get/getAllProjects";
+const API_URL = "http://localhost:5555/auth/api/ngo/get/getAllProjects";
 const DELETE_PROJECT_URL_BASE =
-  "https://ngo-admin.doaguru.com/auth/api/ngo/delete/deleteProject";
+  "http://localhost:5555/auth/api/ngo/delete/deleteProject";
 const CHUNK_SIZE = 5;
 
 const ProjectsContent = () => {
@@ -339,7 +339,7 @@ const ProjectsContent = () => {
       );
 
       // call backend
-      const url = `https://ngo-admin.doaguru.com/auth/api/ngo/delete/deleteProjectDetail/${detailId}`;
+      const url = `http://localhost:5555/auth/api/ngo/delete/deleteProjectDetail/${detailId}`;
       const res = await axios.delete(url, { timeout: 15000 });
 
       if (!(res?.data?.status === "Success")) {

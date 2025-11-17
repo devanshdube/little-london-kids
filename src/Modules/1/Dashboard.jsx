@@ -2,41 +2,31 @@ import React, { useEffect, useState } from "react";
 import {
   Home,
   Users,
-  Settings,
-  BarChart3,
-  FileText,
-  Bell,
-  Search,
   ChevronsLeft,
   ChevronsRight,
   ShieldCheck,
   IndianRupee,
   CreditCard,
   Folder,
-  Award,
   ClipboardList,
   Images,
   Phone,
-  IdCard,
+  GraduationCap,
+  Handshake,
 } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../Redux/user/userSlice";
 import { useLocation, useNavigate } from "react-router-dom";
 import DashboardContent from "./Content/DashboardContent";
-import SettingsContent from "./Content/SettingsContent";
-import NotificationsContent from "./Content/NotificationsContent";
-import DocumentsContent from "./Content/DocumentsContent";
 import UsersContent from "./Content/UsersContent";
-import AnalyticsContent from "./Content/AnalyticsContent";
-import SignIn from "../Auth/SignIn";
 import PaymentContent from "./Content/PaymentContent";
 import PaymentHistory from "./Content/PaymentHistory";
-import Certificate from "./Content/Certificate";
 import ProjectUploader from "./Content/ProjectUploader";
 import ProjectsContent from "./Content/ProjectsContent";
 import GalleryUploader from "./Content/GalleryUploader";
 import ContactUsHistory from "./Content/ContactUsHistory";
-import CertificateGenerate from "./Content/CertificateGenerate";
+import AdmissionHistory from "./Content/AdmissionHistory";
+import FranchiseHistory from "./Content/FranchiseHistory";
 
 export default function Dashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -49,65 +39,54 @@ export default function Dashboard() {
   const location = useLocation();
 
   useEffect(() => {
-    // example path: /admin/users  -> we want "users"
-    const parts = location.pathname.split("/").filter(Boolean); // ["admin","users"]
-    const sub = parts[1] ?? ""; // undefined => ""
+    const parts = location.pathname.split("/").filter(Boolean);
+    const sub = parts[1] ?? "";
     if (!sub || sub === "") {
       setActiveMenu("dashboard");
     } else {
-      // map url segment to your menu ids (if you use different names adjust here)
-      // allow mapping like "project-list" etc. We'll use exact match.
       setActiveMenu(sub);
     }
   }, [location.pathname]);
 
   const menuItems = [
-    { id: "dashboard", label: "Dashboard", icon: Home },
-    // { id: "analytics", label: "Analytics", icon: BarChart3 },
-    { id: "users", label: "Users", icon: Users },
-    // { id: "documents", label: "Documents", icon: FileText },
-    // { id: "notifications", label: "Notifications", icon: Bell },
     { id: "Contact-History", label: "Contact-History", icon: Phone },
+    {
+      id: "Admission-History",
+      label: "Admission-History",
+      icon: GraduationCap,
+    },
+    { id: "gallery", label: "Gallery", icon: Images },
+    { id: "Franchise", label: "Franchise", icon: Handshake },
+    { id: "dashboard", label: "Dashboard", icon: Home },
+    { id: "users", label: "Users", icon: Users },
     { id: "payment", label: "Payment", icon: IndianRupee },
     { id: "payment-history", label: "Payment History", icon: CreditCard },
-    { id: "certificate", label: "Certificate", icon: Award },
-    { id: "certificate-generate", label: "Create Certificate", icon: IdCard },
     { id: "project", label: "Create Project", icon: Folder },
     { id: "project-list", label: "Project List", icon: ClipboardList },
-    { id: "gallery", label: "Gallery", icon: Images },
-    // { id: "settings", label: "Settings", icon: Settings },
   ];
 
   const renderContent = () => {
     switch (activeMenu) {
-      case "dashboard":
-        return <DashboardContent />;
-      case "analytics":
-        return <AnalyticsContent />;
-      case "users":
-        return <UsersContent />;
       case "Contact-History":
         return <ContactUsHistory />;
-      case "documents":
-        return <DocumentsContent />;
-      case "notifications":
-        return <NotificationsContent />;
-      // case "settings":
-      //   return <SettingsContent />;
+      case "Admission-History":
+        return <AdmissionHistory />;
+      case "gallery":
+        return <GalleryUploader />;
+      case "Franchise":
+        return <FranchiseHistory />;
+      case "dashboard":
+        return <DashboardContent />;
+      case "users":
+        return <UsersContent />;
       case "payment":
         return <PaymentContent />;
       case "payment-history":
         return <PaymentHistory />;
-      case "certificate":
-        return <Certificate />;
-      case "certificate-generate":
-        return <CertificateGenerate />;
       case "project":
         return <ProjectUploader />;
       case "project-list":
         return <ProjectsContent />;
-      case "gallery":
-        return <GalleryUploader />;
       default:
         return <DashboardContent />;
     }
@@ -122,15 +101,12 @@ export default function Dashboard() {
       dispatch(logout());
       localStorage.removeItem("token");
       navigate("/signin");
-    }, 1200); // Fake loading (1.2 sec)
+    }, 1200);
   };
 
-  // when user clicks a sidebar menu: navigate the URL AND set activeMenu
   const onMenuClick = (id) => {
     setActiveMenu(id);
-    // build path: dashboard -> /admin  ; others -> /admin/:id
     const path = id === "dashboard" ? "/admin" : `/admin/${id}`;
-    // only push if different to avoid extra history entries
     if (location.pathname !== path) navigate(path);
   };
 
@@ -160,7 +136,6 @@ export default function Dashboard() {
           </button>
         </div>
 
-        {/* Menu Items */}
         <nav className="flex-1 p-4">
           <ul className="space-y-2">
             {menuItems.map((item) => {
@@ -168,7 +143,6 @@ export default function Dashboard() {
               return (
                 <li key={item.id}>
                   <button
-                    // onClick={() => setActiveMenu(item.id)}
                     onClick={() => onMenuClick(item.id)}
                     className={`w-full flex items-center gap-4 p-3 rounded-lg transition-all ${
                       activeMenu === item.id
@@ -187,7 +161,6 @@ export default function Dashboard() {
           </ul>
         </nav>
 
-        {/* Sidebar Footer */}
         <div className="p-4 border-t border-[#805dca]">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-10 h-10 rounded-full bg-[#805dca] flex items-center justify-center font-bold">
@@ -203,7 +176,6 @@ export default function Dashboard() {
             )}
           </div>
 
-          {/* ✅ Logout Button */}
           <button
             onClick={() => setShowLogoutModal(true)}
             className="w-full flex items-center gap-3 bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg backdrop-blur-md transition"
@@ -260,23 +232,6 @@ export default function Dashboard() {
             <h2 className="hidden sm:block text-2xl font-bold text-gray-800 capitalize">
               {activeMenu}
             </h2>
-            {/* <div className="flex items-center gap-4">
-              <div className="relative">
-                <Search
-                  className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
-                  size={20}
-                />
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
-                />
-              </div>
-              <button className="p-2 rounded-lg hover:bg-gray-100 relative">
-                <Bell size={24} className="text-gray-600" />
-                <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
-              </button>
-            </div> */}
           </div>
         </header>
 

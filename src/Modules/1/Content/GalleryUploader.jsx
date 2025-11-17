@@ -6,11 +6,10 @@ import { useNavigate } from "react-router-dom";
 import { logout as logoutAction } from "./../../../Redux/user/userSlice";
 
 const API_UPLOAD =
-  "https://ngo-admin.doaguru.com/auth/api/ngo/post/uploadGalleryImages";
-const API_GET =
-  "https://ngo-admin.doaguru.com/auth/api/ngo/get/getGalleryImages";
+  "http://localhost:5555/auth/api/ngo/post/uploadSchoolGalleryImages";
+const API_GET = "http://localhost:5555/auth/api/ngo/get/getSchoolGalleryImages";
 const API_DELETE =
-  "https://ngo-admin.doaguru.com/auth/api/ngo/delete/deleteGalleryImage";
+  "http://localhost:5555/auth/api/ngo/delete/deleteSchoolGalleryImage";
 
 const MAX_FILES = 20;
 const MAX_FILE_SIZE = 2 * 1024 * 1024;

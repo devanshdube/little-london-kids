@@ -6,14 +6,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logout as logoutAction } from "./../../../Redux/user/userSlice";
 
-const API_USERS = "https://ngo-admin.doaguru.com/auth/api/ngo/get/getAllUser";
+const API_USERS = "http://localhost:5555/auth/api/ngo/get/getAllUser";
 const API_PAYMENTS =
-  "https://ngo-admin.doaguru.com/auth/api/ngo/get/getPaymentTransactions";
-const API_PROJECTS =
-  "https://ngo-admin.doaguru.com/auth/api/ngo/get/getAllProjects";
-const API_GALLERY =
-  "https://ngo-admin.doaguru.com/auth/api/ngo/get/getGalleryImages";
-const API_ADMINS = "https://ngo-admin.doaguru.com/auth/api/ngo/get/getAllAdmin";
+  "http://localhost:5555/auth/api/ngo/get/getPaymentTransactions";
+const API_PROJECTS = "http://localhost:5555/auth/api/ngo/get/getAllProjects";
+const API_GALLERY = "http://localhost:5555/auth/api/ngo/get/getGalleryImages";
+const API_ADMINS = "http://localhost:5555/auth/api/ngo/get/getAllAdmin";
 
 function useKolkataDate() {
   const [now, setNow] = useState(() => new Date());
@@ -47,7 +45,6 @@ export default function DashboardContent() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // Prefer token from Redux (persisted), fallback to localStorage
   const reduxToken = useSelector((state) => state.user.token);
   const currentUser = useSelector((state) => state.user.currentUser);
 

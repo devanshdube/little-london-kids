@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import { X, User, Users, Camera } from "lucide-react";
 import axios from "axios";
 
-const UPDATE_URL_BASE =
-  "https://ngo-admin.doaguru.com/auth/api/ngo/login/updateUser";
+const UPDATE_URL_BASE = "http://localhost:5555/auth/api/ngo/login/updateUser";
 
 const EditUserModal = ({ user, onClose, onUpdated }) => {
   const [form, setForm] = useState({

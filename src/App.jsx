@@ -4,7 +4,6 @@ import { Suspense } from "react";
 import { useSelector } from "react-redux";
 import Dashboard from "./Modules/1/Dashboard";
 import SignIn from "./Modules/Auth/SignIn";
-import EmployeeDashboard from "./Modules/2/EmployeeDashboard";
 import ForgotPassword from "./Modules/Auth/ForgotPassword";
 
 function App() {
@@ -44,9 +43,6 @@ function App() {
           }
         />
         {role === "admin" && <Route path="/admin/*" element={<Dashboard />} />}
-        {role === "employee" && (
-          <Route path="/employee/*" element={<EmployeeDashboard />} />
-        )}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Suspense>

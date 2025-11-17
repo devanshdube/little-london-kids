@@ -1,4 +1,3 @@
-// ContactUsHistory.jsx (replace PaymentHistory)
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import axios from "axios";
 import { Search, X } from "lucide-react";
@@ -7,10 +6,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logout as logoutAction } from "./../../../Redux/user/userSlice";
 
-const API_URL = "http://localhost:5555/auth/api/ngo/get/getAllSchoolQuerys";
+const API_URL =
+  "http://localhost:5555/auth/api/ngo/get/getAllSchoolAdmissionQuerys";
 const CHUNK_SIZE = 8;
 
-const ContactUsHistory = () => {
+const AdmissionHistory = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -69,7 +69,6 @@ const ContactUsHistory = () => {
 
       const res = await axios.get(API_URL, { ...authHeader, timeout: 15000 });
 
-      // Expecting something like: { status: "Success", data: [ {id,name,email,phone,subject,message,created_at}, ... ] }
       if (res?.data?.status === "Success" && Array.isArray(res.data.data)) {
         const queries = res.data.data.map((q) => ({
           ...q,
@@ -83,7 +82,6 @@ const ContactUsHistory = () => {
         setDisplayed(queries.slice(0, CHUNK_SIZE));
         setHasMore(queries.length > CHUNK_SIZE);
       } else {
-        // accept other shapes such as res.data.queries or res.data.data === undefined
         const alt = Array.isArray(res?.data?.queries)
           ? res.data.queries
           : Array.isArray(res?.data?.querys)
@@ -133,16 +131,16 @@ const ContactUsHistory = () => {
     if (searchTerm.trim()) {
       const q = searchTerm.trim().toLowerCase();
       list = list.filter((item) => {
-        const name = String(item.name || "").toLowerCase();
+        const name = String(item.studen_name || "").toLowerCase();
         const phone = String(item.phone || "").toLowerCase();
         const email = String(item.email || "").toLowerCase();
-        const subject = String(item.subject || "").toLowerCase();
-        const message = String(item.message || "").toLowerCase();
+        const classFor = String(item.class_for || "").toLowerCase();
+        const message = String(item.information || "").toLowerCase();
         return (
           name.includes(q) ||
           phone.includes(q) ||
           email.includes(q) ||
-          subject.includes(q) ||
+          classFor.includes(q) ||
           message.includes(q)
         );
       });
@@ -215,7 +213,7 @@ const ContactUsHistory = () => {
         <div className="p-4 border-b">
           <div className="flex justify-between items-center mb-4">
             <h3 className="text-xl font-bold text-gray-800">
-              Contact Us History
+              Admission History
             </h3>
 
             <div className="flex items-center gap-3">
@@ -233,7 +231,7 @@ const ContactUsHistory = () => {
           <div className="space-y-4">
             <div className="relative">
               <InputField
-                placeholder="Search by name, phone, email, subject or message..."
+                placeholder="Search by name, phone, email, class or information..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 icon={Search}
@@ -274,19 +272,25 @@ const ContactUsHistory = () => {
             <thead className="bg-gray-50 sticky top-0 z-10">
               <tr>
                 <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                  Name
+                  Student Name
                 </th>
                 <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                  Phone
+                  Parent Name
                 </th>
                 <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">
                   Email
                 </th>
                 <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                  Subject
+                  Phone
                 </th>
                 <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                  Message
+                  Class
+                </th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                  Branch
+                </th>
+                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                  Information
                 </th>
                 <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">
                   Date
@@ -299,12 +303,9 @@ const ContactUsHistory = () => {
                 <tr key={q.id} className="hover:bg-gray-50 align-top">
                   <td className="px-4 py-3 whitespace-nowrap">
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-indigo-500 rounded-full flex items-center justify-center text-white text-sm">
-                        {q.name ? q.name.charAt(0).toUpperCase() : "U"}
-                      </div>
                       <div>
                         <div className="font-medium text-gray-800">
-                          {q.name}
+                          {q.studen_name}
                         </div>
                         <div className="text-xs text-gray-500">
                           {q.id ? `#${q.id}` : ""}
@@ -314,22 +315,30 @@ const ContactUsHistory = () => {
                   </td>
 
                   <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-600">
+                    {q.parent_name}
+                  </td>
+
+                  <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-600">
+                    {q.email}
+                  </td>
+
+                  <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-600">
                     {q.phone}
+                  </td>
+
+                  <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-600">
+                    {q.class_for}
                   </td>
 
                   <td className="px-4 py-3 whitespace-nowrap text-sm">
                     <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded text-sm">
-                      {q.email}
+                      {q.branch}
                     </span>
                   </td>
 
-                  <td className="px-4 py-3 whitespace-nowrap text-sm font-medium">
-                    {q.subject || "—"}
-                  </td>
-
                   <td className="px-4 py-3 whitespace-normal text-sm text-gray-700 max-w-[30ch]">
-                    <div className="text-sm truncate" title={q.message}>
-                      {q.message}
+                    <div className="text-sm truncate" title={q.information}>
+                      {q.information}
                     </div>
                   </td>
 
@@ -375,4 +384,4 @@ const ContactUsHistory = () => {
   );
 };
 
-export default ContactUsHistory;
+export default AdmissionHistory;
