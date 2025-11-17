@@ -31,7 +31,7 @@
     <link rel="apple-touch-icon-precomposed" href="assets/images/Favicon.png" />
   </head>
 
-  <body class="counter-scroll header-fixed inner-page about">
+  <body class="header-fixed inner-page pricing">
     <!-- Preloader -->
     <div id="preload" class="preload">
       <div class="preload-logo"></div>
@@ -93,32 +93,6 @@
                     </nav>
                   </div>
                     <div class="header-right fx">
-                      <div id="header-search">
-                        <a href="#" class="search-box header-search-icon">
-                          <i class="far fa-search"></i>
-                        </a>
-                        <form
-                          role="search"
-                          method="get"
-                          class="header-search-form"
-                          action="#"
-                        >
-                          <input
-                            type="text"
-                            value=""
-                            name="s"
-                            class="header-search-field"
-                            placeholder="Search..."
-                          />
-                          <button
-                            type="submit"
-                            class="header-search-submit"
-                            title="Search"
-                          >
-                            <i class="fa fa-search"></i>
-                          </button>
-                        </form>
-                      </div>
                       <div class="header-contact fx">
                         <a href="#" class="menu-bar-right header-menu">
                           <svg
@@ -144,7 +118,7 @@
                                 }
                               </style>
                             </defs>
-                            <g id="Menu_Area2" data-name="Menu Area">
+                            <g data-name="Menu Area">
                               <g id="Menu_bar" data-name="Menu bar">
                                 <path
                                   id="Bg"
@@ -163,7 +137,6 @@
 
                         <div class="inner-contact fx">
                           <svg
-                            id="Hero_Area2"
                             data-name="Hero Area"
                             xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -174,7 +147,6 @@
                             <g data-name="Menu Area">
                               <g>
                                 <image
-                                  id="helpline2"
                                   width="49"
                                   height="47"
                                   xlink:href="data:img/png;base64,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"
@@ -194,39 +166,37 @@
               </div>
             </div>
             <div id="sidebar2" class="side-menu__block">
-              <div
-                class="side-menu__block-overlay custom-cursor__overlay"
-              ></div>
+            <div class="side-menu__block-overlay custom-cursor__overlay"></div>
 
-              <div class="inner-sidebar side-menu__block-inner fl-st-1">
-                <div class="side-menu__top justify-content-end">
-                  <a href="#" class="side-menu__toggler side-menu__close-btn"
-                    ><img src="assets/images/common/close.png" alt="images"
-                  /></a>
-                </div>
-                <div class="wrap">
-                  <div class="widget widget-quote">
-                    <div class="box-feature">
-                      <div class="inner">
-                        <img
-                          src="assets/images/post/little-london-vice.jpg"
-                          alt="Image"
-                        />
-                        <div class="box-icon jus-ali-ct">
-                          <i class="far fa-quote-right"></i>
-                        </div>
+            <div class="inner-sidebar side-menu__block-inner fl-st-1">
+              <div class="side-menu__top justify-content-end">
+                <a href="#" class="side-menu__toggler side-menu__close-btn"
+                  ><img src="assets/images/common/close.png" alt="images"
+                /></a>
+              </div>
+              <div class="wrap">
+                <div class="widget widget-quote">
+                  <div class="box-feature">
+                    <div class="inner">
+                      <img
+                        src="assets/images/post/little-london-vice.jpg"
+                        alt="Image"
+                      />
+                      <div class="box-icon jus-ali-ct">
+                        <i class="far fa-quote-right"></i>
                       </div>
                     </div>
-                    <div class="box-content">
-                      <h5 class="author clr-pri-2">Keerti Sharma</h5>
-                      <p class="wrap f-rubik">
-                        President of Little London Kids School, Dedicated to
-                        Joyful Learning and Holistic Child Growth
-                      </p>
-                    </div>
                   </div>
+                  <div class="box-content">
+                    <h5 class="author clr-pri-2">Keerti Sharma</h5>
+                    <p class="wrap f-rubik">
+                      President of Little London Kids School, Dedicated to
+                      Joyful Learning and Holistic Child Growth
+                    </p>
+                  </div>
+                </div>
 
-                  <!-- <div class="widget widget-search st-2">
+                <!-- <div class="widget widget-search st-2">
                   <h4 class="title-widget fl-ctm-1">
                     Search<span class="ctm-inner"></span>
                   </h4>
@@ -238,159 +208,157 @@
                   </div>
                 </div> -->
 
-                  <div class="widget widget-category st-2">
-                    <h4 class="title-widget fl-ctm-1">
-                      Why Choose us<span class="ctm-inner"></span>
-                    </h4>
-                    <div class="list-category">
-                      <ul>
-                        <li class="fx">
-                          <span class="st wd-ctm"
-                            >Trained &amp; Loving Teachers</span
-                          >
-                          <!-- <span class="st">05</span> -->
-                        </li>
-                        <li class="fx">
-                          <span class="st wd-ctm"
-                            >Safe &amp; Hygienic Campus</span
-                          >
-                          <!-- <span class="st">02</span> -->
-                        </li>
-                        <li class="fx">
-                          <span class="st wd-ctm"
-                            >Smart &amp; Modern Learning</span
-                          >
-                          <!-- <span class="st">07</span> -->
-                        </li>
-                        <li class="fx">
-                          <span class="st wd-ctm">Value Education</span>
-                          <!-- <span class="st">04</span> -->
-                        </li>
-                        <li class="fx">
-                          <span class="st wd-ctm"
-                            >Events &amp; Celebrations</span
-                          >
-                          <!-- <span class="st">06</span> -->
-                        </li>
-                        <li class="fx">
-                          <span class="st wd-ctm"
-                            >Personal Attention to Every Child</span
-                          >
-                          <!-- <span class="st">05</span> -->
-                        </li>
-                        <li class="fx">
-                          <span class="st wd-ctm">Events</span>
-                          <!-- <span class="st">05</span> -->
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div class="widget widget-news st-2">
-                    <h4 class="title-widget fl-ctm-1">
-                      Contact Us <span class="ctm-inner"></span>
-                    </h4>
-
-                    <ul class="list-news">
-                      <!-- School Name -->
+                <div class="widget widget-category st-2">
+                  <h4 class="title-widget fl-ctm-1">
+                    Why Choose us<span class="ctm-inner"></span>
+                  </h4>
+                  <div class="list-category">
+                    <ul>
                       <li class="fx">
-                        <ul class="box-content">
-                          <li>
-                            <h6 class="title">Little London Kids School</h6>
-                          </li>
-                          <li>
-                            <p
-                              class="description"
-                              style="
-                                font-size: 15px;
-                                line-height: 22px;
-                                color: #333;
-                              "
-                            >
-                              (A Venture of Future Kids Foundation)
-                            </p>
-                          </li>
-                        </ul>
+                        <span class="st wd-ctm"
+                          >Trained &amp; Loving Teachers</span
+                        >
+                        <!-- <span class="st">05</span> -->
                       </li>
-
-                      <!-- Address -->
                       <li class="fx">
-                        <ul class="box-content">
-                          <li>
-                            <h6 class="title">Address</h6>
-                          </li>
-                          <li>
-                            <p class="description">
-                              Beside Dr. Pawan Sthapak, Gol Bazar,<br />
-                              Jabalpur – 482001, M.P., India
-                            </p>
-                          </li>
-                        </ul>
+                        <span class="st wd-ctm"
+                          >Safe &amp; Hygienic Campus</span
+                        >
+                        <!-- <span class="st">02</span> -->
                       </li>
-
-                      <!-- Phone Numbers -->
                       <li class="fx">
-                        <ul class="box-content">
-                          <li>
-                            <h6 class="title">Phone Numbers</h6>
-                          </li>
-                          <li>
-                            <p class="description">
-                              9993531787 <br />
-                              7415760003 <br />
-                              0761-4035130
-                            </p>
-                          </li>
-                        </ul>
+                        <span class="st wd-ctm"
+                          >Smart &amp; Modern Learning</span
+                        >
+                        <!-- <span class="st">07</span> -->
                       </li>
-
-                      <!-- Email -->
                       <li class="fx">
-                        <ul class="box-content">
-                          <li>
-                            <h6 class="title">Email</h6>
-                          </li>
-                          <li>
-                            <p class="description">
-                              littlelondonkidsschool@gmail.com
-                            </p>
-                          </li>
-                        </ul>
+                        <span class="st wd-ctm">Value Education</span>
+                        <!-- <span class="st">04</span> -->
                       </li>
-
-                      <!-- Timings -->
                       <li class="fx">
-                        <ul class="box-content">
-                          <li>
-                            <h6 class="title">School Timings</h6>
-                          </li>
-                          <li>
-                            <p class="description">
-                              Monday–Saturday: 9:00 AM – 12:30 PM <br />
-                              Sunday: Closed
-                            </p>
-                          </li>
-                        </ul>
+                        <span class="st wd-ctm">Events &amp; Celebrations</span>
+                        <!-- <span class="st">06</span> -->
                       </li>
-
-                      <!-- Visit Us -->
                       <li class="fx">
-                        <ul class="box-content">
-                          <li>
-                            <h6 class="title">Visit Us Anytime</h6>
-                          </li>
-                          <li>
-                            <p class="description">
-                              Parents are welcome to explore our joyful learning
-                              campus.
-                            </p>
-                          </li>
-                        </ul>
+                        <span class="st wd-ctm"
+                          >Personal Attention to Every Child</span
+                        >
+                        <!-- <span class="st">05</span> -->
+                      </li>
+                      <li class="fx">
+                        <span class="st wd-ctm">Events</span>
+                        <!-- <span class="st">05</span> -->
                       </li>
                     </ul>
                   </div>
+                </div>
 
-                  <!-- <div class="widget widget-tag st-2">
+                <div class="widget widget-news st-2">
+                  <h4 class="title-widget fl-ctm-1">
+                    Contact Us <span class="ctm-inner"></span>
+                  </h4>
+
+                  <ul class="list-news">
+                    <!-- School Name -->
+                    <li class="fx">
+                      <ul class="box-content">
+                        <li>
+                          <h6 class="title">Little London Kids School</h6>
+                        </li>
+                        <li>
+                          <p
+                            class="description"
+                            style="
+                              font-size: 15px;
+                              line-height: 22px;
+                              color: #333;
+                            "
+                          >
+                            (A Venture of Future Kids Foundation)
+                          </p>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <!-- Address -->
+                    <li class="fx">
+                      <ul class="box-content">
+                        <li>
+                          <h6 class="title">Address</h6>
+                        </li>
+                        <li>
+                          <p class="description">
+                            Beside Dr. Pawan Sthapak, Gol Bazar,<br />
+                            Jabalpur – 482001, M.P., India
+                          </p>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <!-- Phone Numbers -->
+                    <li class="fx">
+                      <ul class="box-content">
+                        <li>
+                          <h6 class="title">Phone Numbers</h6>
+                        </li>
+                        <li>
+                          <p class="description">
+                            9993531787 <br />
+                            7415760003 <br />
+                            0761-4035130
+                          </p>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <!-- Email -->
+                    <li class="fx">
+                      <ul class="box-content">
+                        <li>
+                          <h6 class="title">Email</h6>
+                        </li>
+                        <li>
+                          <p class="description">
+                            littlelondonkidsschool@gmail.com
+                          </p>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <!-- Timings -->
+                    <li class="fx">
+                      <ul class="box-content">
+                        <li>
+                          <h6 class="title">School Timings</h6>
+                        </li>
+                        <li>
+                          <p class="description">
+                            Monday–Saturday: 9:00 AM – 12:30 PM <br />
+                            Sunday: Closed
+                          </p>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <!-- Visit Us -->
+                    <li class="fx">
+                      <ul class="box-content">
+                        <li>
+                          <h6 class="title">Visit Us Anytime</h6>
+                        </li>
+                        <li>
+                          <p class="description">
+                            Parents are welcome to explore our joyful learning
+                            campus.
+                          </p>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- <div class="widget widget-tag st-2">
                   <h4 class="title-widget fl-ctm-1">
                     best tags<span class="ctm-inner"></span>
                   </h4>
@@ -473,10 +441,10 @@
                     </div>
                   </div>
                 </div> -->
-                </div>
               </div>
-              <!--/inner-sidebar-->
             </div>
+            <!--/inner-sidebar-->
+          </div>
           </div>
         </header>
 
@@ -502,13 +470,11 @@
             <div class="row">
               <div class="col-12">
                 <div class="page-title inner">
-                  <h1 class="title">Admissions Open</h1>
+                  <h1 class="title">Events</h1>
                   <div class="breadcrumbs">
                     <ul class="jus-ct">
                       <li><a href="index.html" class="f-rubik">Home</a></li>
-                      <li>
-                        <p class="breadcrumbs-inner f-rubik">About Us</p>
-                      </li>
+                      <li><p class="breadcrumbs-inner f-rubik">Events</p></li>
                     </ul>
                   </div>
                 </div>
@@ -517,324 +483,205 @@
           </div>
         </section>
 
-        <section class="tf-section tf-testimonial">
+        <section class="tf-section tf-event">
           <div class="container">
             <div class="row">
-              <div class="col-12">
-                <div class="title-heading st-3">
-                  <div class="sub-heading clr-pri-3 f-mulish">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      xmlns:xlink="http://www.w3.org/1999/xlink"
-                      width="77"
-                      height="30"
-                      viewBox="0 0 77 30"
-                    >
-                      <g>
-                        <image
-                          width="77"
-                          height="30"
-                          xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE0AAAAeCAYAAABpE5PpAAAEPklEQVRogd2Ze4hVVRTGf+pNHRtnegxqlonUMJYGY/pXWoFEJpVBTFRDaBbOVmxC/5GUUFJMqQh6MLUjfARBUVGEYi9rqFQU0UrQ8pXvMkcLmbJSZ2TdvlOHy73de+fOmXPv/eCwD+ewz9n7O2utb611enU2NZEGA4F+QFu6m2UF7/PeTe8M17cA48qesC4iHWk3AiOB70tiBzEgHWmfAr8CB8p+911EKmn1wGXAlyWzgxiQStpyjZ+V/c4LQCI0tQKYqPN8SDPia2Wl1wBXSH0D/AYcB3YD3wL7gY64N14IwqRNAi4CjuQgAv2Be3RMkksHOAOcBs6KvEqgT+h+m+LmWuAD4PeiYSNHhEm7S+P6/5l6FTAXeBSoFgGfAJ8D3wG7RFgY9iGuliKPByYA9wMPAu3A28CzwA9xEpEPwqTdprE1zfxLgSeBZrnje8BKWcz5LO8zi9unY62uDQIagNn6AI8AbwHzgYM9S0H+CIRgGDBc51+nPKVBFjQHWK34ZZbyUQ6EZcIvQAswGpgMbJfl2XueSHHnokNA2q0ajwF7dW7C8DrwjoL3GGAG8GM3bqJT5Fv18bDi4TK5+5XFTtp4jZs1mvt8oY2YW96smBUVOmXFo4B1wC0q5cb0PCXZEZAW1JlbFOw3KnDfASwtwA3zxc/A3RKGoUqyb+qhd+eM3hKDGzThkISgWtYVR5JrH2ieRKFSllcfwzoywki7Xm0gwyLgEiW5O2Jem1UnC4Aqxb1hsa7GuRqcszifJO260K0RwL1FQFgAE4VXgMFKhAfEuJYXgT9wLpFQ7AqwSBVB2B0sYz8FnIxnrTwO1Mn6jcBpPb4C5yxMTElmFt6fS2hBAZ7WkQ5nFPMOA3tUR34F7Ix4yeeAB5TLTQU2Aa9G/M5UPARcDLyMRKA9x4kVIrguVD0YjgIfqkpojUhpTyihtue/AGyT0kcP5/oqtqKEPElak9IKc8leoUUMUGFeJRWz43KlAoOUfAbjLB3m2quAJcDf3byhDaoWngPeBcaKzKgxRyLUjPdnCdWeB7tY85mQ1KggNxG5VqT2jYA0w/PK20ys3pfF/xnBe/6Bc1bmPSXvaQkuJ7JMy4YO1ZF2bI1s8f+hU0JQqyrmDdWs3R8SnBuqBkP/ZGfG+397gJn+RhUz2qVkFkvvE3HdW+A7NwT4WB60Hu83hG+XImnop8/t6uc1AmuUlBcO5+qk0KP1Ye5MfWah7hkndqqwX6Ma2RoKj0nJ84dzZkAzgWeUXhxIdn+8/yv1WZn+sJcSTIjelOWhfuBidaBz+RfRT+6+UNaFWlONeH883YRStrQAbfpPMVXdkQlqwf+kuGSu9o1+7nRoz4NF0ES5X5WedULkvRYO/KkoB0sLwxLw6WrLj8x9WrLxugJ4Ce+zJvvlRloYRpq10i1pt6aEJeIWqyxGmdVZzLKqohXvg+ZrdgAXAIwK6LO/4gPOAAAAAElFTkSuQmCC"
-                        ></image>
-                      </g>
-                    </svg>
-                    <span class="inner-sub st-1">Admission Process</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      xmlns:xlink="http://www.w3.org/1999/xlink"
-                      width="77"
-                      height="30"
-                      viewBox="0 0 77 30"
-                    >
-                      <g>
-                        <image
-                          width="77"
-                          height="30"
-                          xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE0AAAAeCAYAAABpE5PpAAAEMUlEQVRoge2Ze4hVVRTGf46WMyWmZvkaNSWfST7I1EINyVQ0kSxsQiyS3JFo/lGhUQSCJokk5aONhijhHyGRkKTlI3JMFKQaBx2o1HS0klSs66ucGVl3vhOnw73XwblPnQ8OZ+acfc/e+zvr8a11mtXNmsUtDe8T79659sAVvP87eqvo1mYsJR4C9ica0ERaclQBfXFuSHREE2nJ4P0x4BzwdXREE2mp8S3QDucGhUc1kZYa23V3SXhUizxb5I3AXnxPYCDQG+gAtAk9x7Lfb8AvwA/AT0BtA+cJSBuDcyV4f4kCJu1OYAowERgLtA/dqwFiIus2oDVQErp/FtgGbNZxOeks3lfhXDVQCowDPqcASesDvA5MA1rJYvYA5TpbxjsO/Bv5nRHXD3gwbjX1RJcB53HuY+B9vK9OMucO4HlgUkBaocS07sBG4DAwU8TMBjoBo4A3gS1ywShhhr+AfcAakdURmCCLexU4gnPLcK5tgt9+o/PjwYV8J605MF9k2Wa/12YHAKuA0zf4XHPhrbLYXsB6YF58HuemRsaW69wd57qS56R1AXYC7wIWgF+QSrfN1qVtFu+P4v1LwOC4xcEmnFsbD/z1938GTmn0aPKYtMEqYcz1vgQekDWkj6wovK8ARgJv6QXtwrl7NWqfzo+Sp6Q9IlHZGVgKPAn8npWZva/B+0XA+HgJBd/hXGmoBjVLzzvSBsmyLDMuAN5Q/MkuvN8uq7tLieC45h+Acy0C0koiWicX6Kp41VrZcElOV+P9QckTE8rv6Gox0L9IWu0i8EEOl3iHNJCp+dUK/rlHPXFPAT1Ca+lnhF0FLENMllvEcrBYI2qIsuXcnJHl3N3xAr2+4ghQLUtbrP/7BhXBCmA5MB34KMtLfRmYAZwEntVLzDT6K2YNxLleCg3dIuVWMvQJ2t1Wo/0DnADu19/ZwMPAbiWkx1QKZQLN9fyp8qgujZhjTWBpVnrMAT6UMn4vC4TdExeScDvwWoYIs2e/Ld1VGrpeo2ripM4mXs8oNMVUdl1WrA9QF++SeP9r+MNKkSzMCBwKVGZgEwGK1XYxsfgZ8HSGhGsrJZVTittHJR/+/K89lOzDSgqEuxy1KhPKVfyOCJUP6YS5ygYRdlAdhEwp/Zg8KK2Iits9aoV0UwegY4YIe0auMTlH2bpRSFQRTNSGrJOwVz2sdMBE4hfAc3KPJ4BjhUHT/5GItCuq/2xD9wEHgFcaWXKZRVWopjuiQvxQOjaQCyQjwoLlcIlNE3orgR/lVi0buM4idUh3q61sWugrYJj6YwWLVO3uP7RpS68L5a6fKh1vEaGVGndVJHVQ0T1CPfVOetZptak3FDJZAa73jaBWFcInykIvSvyW6bgeqqT91qmReFOgoR9WYtI7dph7mbo2NW8xz6zLXPaCLMpczz6VWYvHSLu5AFwD7u/9V73LPFIAAAAASUVORK5CYII="
-                        ></image>
-                      </g>
-                    </svg>
-                  </div>
-                  <h2 class="title clr-pri-2">
-                    Admissions Open - Nursery to 8th
-                    <span class="clr-pri-3">Little London </span>Kids School
-                  </h2>
-                </div>
-              </div>
-              <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+              <div class="col-xl-6 col-lg-6 col-md-12 col-12">
                 <div
-                  class="item-fb wow fadeIn animated"
+                  class="sc-event-box style2 active fx wow fadeIn animated"
                   data-wow-delay="0.3ms"
-                  data-wow-duration="1300ms"
+                  data-wow-duration="1000ms"
                 >
-                  <div class="heading fx">
-                    <div class="box-avt">
-                      <img
-                        src="assets/images/thumbnails/addmission-Enqry.png"
-                        alt="Image"
-                      />
-                    </div>
+                  <div class="image">
+                    <img src="assets/images/common/07.vents.jpg" alt="" />
+                  </div>
+                  <div class="content">
+                    <h3>Mother’s Day</h3>
                     <ul>
                       <li>
-                        <h4 class="name-author clr-pri-2">Step 1:</h4>
-                      </li>
-                      <li><p class="clr-pri-5 f-mulish">Enquiry</p></li>
-                    </ul>
-                  </div>
-                  <div class="wrap">
-                    <p class="clr-pri-2">
-                      "Submit the online form with your basic details, and our
-                      team will connect with you shortly."
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-4 col-lg-6 col-md-6 col-12">
-                <div
-                  class="item-fb wow fadeIn animated"
-                  data-wow-delay="0.3ms"
-                  data-wow-duration="1300ms"
-                >
-                  <div class="heading fx">
-                    <div class="box-avt">
-                      <img
-                        src="assets/images/thumbnails/addmission-Submit.png"
-                        alt="Image"
-                      />
-                    </div>
-                    <ul>
-                      <li>
-                        <h4 class="name-author clr-pri-2">Step 2:</h4>
-                      </li>
-                      <li>
-                        <p class="clr-pri-5 f-mulish">Submit Documents</p>
+                        <span
+                          ><i class="far fa-calendar-alt"></i>25 Feb 2022</span
+                        >
                       </li>
                     </ul>
                   </div>
-                  <div class="wrap">
-                    <p class="clr-pri-2">
-                      "Submit all the required documents at the school office to
-                      complete your verification"
-                    </p>
-                  </div>
                 </div>
               </div>
-              <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+              <div class="col-xl-6 col-lg-6 col-md-12 col-12">
                 <div
-                  class="item-fb wow fadeIn animated"
+                  class="sc-event-box style2 active fx wow fadeIn animated"
                   data-wow-delay="0.3ms"
-                  data-wow-duration="1300ms"
+                  data-wow-duration="1000ms"
                 >
-                  <div class="heading fx">
-                    <div class="box-avt">
-                      <img
-                        src="assets/images/thumbnails/addmission-Confirm.png"
-                        alt="Image"
-                      />
-                    </div>
+                  <div class="image">
+                    <img src="assets/images/common/08.vents.jpg" alt="" />
+                  </div>
+                  <div class="content">
+                    <h3>Annual Ceremony</h3>
                     <ul>
                       <li>
-                        <h4 class="name-author clr-pri-2">Step 3:</h4>
-                      </li>
-                      <li>
-                        <p class="clr-pri-5 f-mulish">Confirm Admission</p>
+                        <span
+                          ><i class="far fa-calendar-alt"></i>25 Feb 2022</span
+                        >
                       </li>
                     </ul>
                   </div>
-                  <div class="wrap">
-                    <p class="clr-pri-2">
-                      "Complete the fee payment and finalize your child’s seat
-                      to secure admission without any delay."
-                    </p>
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+                <div
+                  class="sc-event-box style2 active fx wow fadeIn animated"
+                  data-wow-delay="0.3ms"
+                  data-wow-duration="1000ms"
+                >
+                  <div class="image">
+                    <img src="assets/images/common/09.vents.jpg" alt="" />
+                  </div>
+                  <div class="content">
+                    <h3>Mother’s Day</h3>
+                    <ul>
+                      <li>
+                        <span
+                          ><i class="far fa-calendar-alt"></i>25 Feb 2022</span
+                        >
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
+              <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+                <div
+                  class="sc-event-box style2 active fx wow fadeIn animated"
+                  data-wow-delay="0.3ms"
+                  data-wow-duration="1000ms"
+                >
+                  <div class="image">
+                    <img src="assets/images/common/10.vents.jpg" alt="" />
+                  </div>
+                  <div class="content">
+                    <h3>Annual Ceremony</h3>
+                    <ul>
+                      <li>
+                        <span
+                          ><i class="far fa-calendar-alt"></i>25 Feb 2022</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+                <div
+                  class="sc-event-box style2 active fx wow fadeIn animated"
+                  data-wow-delay="0.3ms"
+                  data-wow-duration="1000ms"
+                >
+                  <div class="image">
+                    <img src="assets/images/common/11.vents.jpg" alt="" />
+                  </div>
+                  <div class="content">
+                    <h3>Mother’s Day</h3>
+                    <ul>
+                      <li>
+                        <span
+                          ><i class="far fa-calendar-alt"></i>25 Feb 2022</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+                <div
+                  class="sc-event-box style2 active fx wow fadeIn animated"
+                  data-wow-delay="0.3ms"
+                  data-wow-duration="1000ms"
+                >
+                  <div class="image">
+                    <img src="assets/images/common/12.vents.jpg" alt="" />
+                  </div>
+                  <div class="content">
+                    <h3>Annual Ceremony</h3>
+                    <ul>
+                      <li>
+                        <span
+                          ><i class="far fa-calendar-alt"></i>25 Feb 2022</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+                <div
+                  class="sc-event-box style2 active fx wow fadeIn animated"
+                  data-wow-delay="0.3ms"
+                  data-wow-duration="1000ms"
+                >
+                  <div class="image">
+                    <img src="assets/images/common/13.vents.jpg" alt="" />
+                  </div>
+                  <div class="content">
+                    <h3>Mother's Day</h3>
+                    <ul>
+                      <li>
+                        <span
+                          ><i class="far fa-calendar-alt"></i>25 Feb 2022</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+                <div
+                  class="sc-event-box style2 active fx wow fadeIn animated"
+                  data-wow-delay="0.3ms"
+                  data-wow-duration="1000ms"
+                >
+                  <div class="image">
+                    <img src="assets/images/common/14.vents.jpg" alt="" />
+                  </div>
+                  <div class="content">
+                    <h3>Annual Ceremony</h3>
+                    <ul>
+                      <li>
+                        <span
+                          ><i class="far fa-calendar-alt"></i>25 Feb 2022</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- <div class="col-md-12">
+                <div
+                  class="themesflat-pagination style fx fx-style2"
+                  data-wow-delay="200ms"
+                  data-wow-duration="1500ms"
+                >
+                  <ul>
+                    <li class="custom">
+                      <a href="#" class="muted3-color"
+                        ><i class="fas fa-chevron-left"></i
+                      ></a>
+                    </li>
+                    <li><a href="#" class="page-numbers">01</a></li>
+                    <li><a href="#" class="page-numbers">02</a></li>
+                    <li><a href="#" class="page-numbers">03</a></li>
+                    <li class="custom st-2">
+                      <a href="#" class="muted3-color"
+                        ><i class="fas fa-chevron-right"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </div>
+              </div> -->
             </div>
           </div>
         </section>
-
-        <section class="tf-section tf-sc-about1">
-          <div class="container">
-            <div class="row">
-              <div class="col-xl-6 col-lg-8 col-md-12 col-12">
-                <div
-                  class="sc-about-1 wow fadeInLeft animated"
-                  data-wow-delay="0.3ms"
-                  data-wow-duration="1400ms"
-                >
-                  <div class="title-heading">
-                    <div class="sub-heading clr-pri-3 f-mulish">
-                      <span class="inner-sub st-2">Required Documents</span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        width="77"
-                        height="30"
-                        viewBox="0 0 77 30"
-                      >
-                        <g>
-                          <image
-                            width="77"
-                            height="30"
-                            xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE0AAAAeCAYAAABpE5PpAAAEMUlEQVRoge2Ze4hVVRTGf46WMyWmZvkaNSWfST7I1EINyVQ0kSxsQiyS3JFo/lGhUQSCJokk5aONhijhHyGRkKTlI3JMFKQaBx2o1HS0klSs66ucGVl3vhOnw73XwblPnQ8OZ+acfc/e+zvr8a11mtXNmsUtDe8T79659sAVvP87eqvo1mYsJR4C9ica0ERaclQBfXFuSHREE2nJ4P0x4BzwdXREE2mp8S3QDucGhUc1kZYa23V3SXhUizxb5I3AXnxPYCDQG+gAtAk9x7Lfb8AvwA/AT0BtA+cJSBuDcyV4f4kCJu1OYAowERgLtA/dqwFiIus2oDVQErp/FtgGbNZxOeks3lfhXDVQCowDPqcASesDvA5MA1rJYvYA5TpbxjsO/Bv5nRHXD3gwbjX1RJcB53HuY+B9vK9OMucO4HlgUkBaocS07sBG4DAwU8TMBjoBo4A3gS1ywShhhr+AfcAakdURmCCLexU4gnPLcK5tgt9+o/PjwYV8J605MF9k2Wa/12YHAKuA0zf4XHPhrbLYXsB6YF58HuemRsaW69wd57qS56R1AXYC7wIWgF+QSrfN1qVtFu+P4v1LwOC4xcEmnFsbD/z1938GTmn0aPKYtMEqYcz1vgQekDWkj6wovK8ARgJv6QXtwrl7NWqfzo+Sp6Q9IlHZGVgKPAn8npWZva/B+0XA+HgJBd/hXGmoBjVLzzvSBsmyLDMuAN5Q/MkuvN8uq7tLieC45h+Acy0C0koiWicX6Kp41VrZcElOV+P9QckTE8rv6Gox0L9IWu0i8EEOl3iHNJCp+dUK/rlHPXFPAT1Ca+lnhF0FLENMllvEcrBYI2qIsuXcnJHl3N3xAr2+4ghQLUtbrP/7BhXBCmA5MB34KMtLfRmYAZwEntVLzDT6K2YNxLleCg3dIuVWMvQJ2t1Wo/0DnADu19/ZwMPAbiWkx1QKZQLN9fyp8qgujZhjTWBpVnrMAT6UMn4vC4TdExeScDvwWoYIs2e/Ld1VGrpeo2ripM4mXs8oNMVUdl1WrA9QF++SeP9r+MNKkSzMCBwKVGZgEwGK1XYxsfgZ8HSGhGsrJZVTittHJR/+/K89lOzDSgqEuxy1KhPKVfyOCJUP6YS5ygYRdlAdhEwp/Zg8KK2Iits9aoV0UwegY4YIe0auMTlH2bpRSFQRTNSGrJOwVz2sdMBE4hfAc3KPJ4BjhUHT/5GItCuq/2xD9wEHgFcaWXKZRVWopjuiQvxQOjaQCyQjwoLlcIlNE3orgR/lVi0buM4idUh3q61sWugrYJj6YwWLVO3uP7RpS68L5a6fKh1vEaGVGndVJHVQ0T1CPfVOetZptak3FDJZAa73jaBWFcInykIvSvyW6bgeqqT91qmReFOgoR9WYtI7dph7mbo2NW8xz6zLXPaCLMpczz6VWYvHSLu5AFwD7u/9V73LPFIAAAAASUVORK5CYII="
-                          />
-                        </g>
-                      </svg>
-                    </div>
-                    <h2 class="title clr-pri-2">
-                      10 Years Of Experience In Education!
-                    </h2>
-                  </div>
-                  <div class="inner">
-                    <ul>
-                      <li class="st-1 fx">
-                        <i class="fas fa-check"></i>
-                        <p class="clr-pri-2">Birth Certificate</p>
-                      </li>
-                      <li class="st-2 fx">
-                        <i class="fas fa-check"></i>
-                        <p class="clr-pri-2">
-                          Previous School Report Card (if applicable)
-                        </p>
-                      </li>
-                      <li class="st-3 fx">
-                        <i class="fas fa-check"></i>
-                        <p class="clr-pri-2">Passport-size Photographs</p>
-                      </li>
-                      <li class="st-4 fx">
-                        <i class="fas fa-check"></i>
-                        <p class="clr-pri-2">Address Proof</p>
-                      </li>
-                      <li class="st-1 fx">
-                        <i class="fas fa-check"></i>
-                        <p class="clr-pri-2">Transfer Certificate</p>
-                      </li>
-                      <li class="st-2 fx">
-                        <i class="fas fa-check"></i>
-                        <p class="clr-pri-2">
-                          Aadhaar Card(Child & Parents Both)
-                        </p>
-                      </li>
-                      <li class="st-3 fx">
-                        <i class="fas fa-check"></i>
-                        <p class="clr-pri-2">Samagra ID</p>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="tf-section tf-message">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-message">
-                  <h2 class="heading">Online Admission Enquiry</h2>
-                  <form
-                    action="contact/contact-process4.php"
-                    method="post"
-                    id="commentform"
-                    class="comment-form"
-                  >
-                    <div class="fx flex-wrap">
-                      <fieldset class="name">
-                        <input
-                          type="text"
-                          placeholder="Student Name"
-                          required
-                          name="name"
-                          class="name"
-                          id="name"
-                        />
-                      </fieldset>
-                      <fieldset class="email">
-                        <input
-                          type="email"
-                          placeholder="Parent's Name"
-                          required
-                          name="mail"
-                          class="mail"
-                          id="mail"
-                        />
-                      </fieldset>
-                      <fieldset class="name">
-                        <input
-                          type="text"
-                          placeholder="Email"
-                          required
-                          name="name"
-                          class="name"
-                          id="name"
-                        />
-                      </fieldset>
-                      <fieldset class="phone">
-                        <input
-                          type="tel"
-                          placeholder="Phone Number"
-                          required
-                          name="number"
-                          class="number"
-                          id="number"
-                          min="10"
-                          max="10"
-                        />
-                      </fieldset>
-                      <fieldset class="select-wrap" role="group">
-                        <div class="select">
-                          <select name="Apply" id="subject">
-                            <option value="Please Select">
-                              Class Applying for
-                            </option>
-                            <option value="services1">Nursery</option>
-                            <option value="services2">LKG</option>
-                            <option value="services2">UKG</option>
-                            <option value="services2">Grade 1</option>
-                            <option value="services2">Grade 2</option>
-                            <option value="services2">Grade 3</option>
-                            <option value="services2">Grade 4</option>
-                            <option value="services2">Grade 5</option>
-                            <option value="services2">Grade 6</option>
-                            <option value="services2">Grade 7</option>
-                            <option value="services2">Grade 8</option>
-                          </select>
-                        </div>
-                      </fieldset>
-                      <fieldset class="select-wrap" role="group">
-                        <div class="select">
-                          <select name="subject" id="subject">
-                            <option value="Please Select">Select Branch</option>
-                            <option value="services1">School 01</option>
-                            <option value="services2">School 02</option>
-                          </select>
-                        </div>
-                      </fieldset>
-                      <fieldset class="message">
-                        <textarea
-                          placeholder="Additional Information"
-                          rows="5"
-                          tabindex="4"
-                          name="messagewr2"
-                          class="messagewr2"
-                          id="messagewr2"
-                        ></textarea>
-                      </fieldset>
-                      <div class="wrap-btn">
-                        <button type="submit" class="fl-btn st-6">
-                          <span class="inner">Send message</span>
-                        </button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-       <footer id="footer">
+        <footer id="footer">
           <section class="tf-subcribe">
             <div class="container">
               <div class="row">
@@ -1060,7 +907,6 @@
     <!-- Javascript -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/plugin.js"></script>
-    <script src="assets/js/countto.js"></script>
     <script src="assets/js/owl.carousel.min.js"></script>
     <script src="assets/js/owl.carousel2.thumbs.js"></script>
     <script src="assets/js/main.js"></script>
