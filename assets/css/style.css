@@ -241,8 +241,8 @@ img {
 }
 
 p {
-    font-weight: 400;
-    font-size  : 16px;
+    font-weight: 600;
+    font-size  : 20px;
     color      : var(--primary-color4);
 }
 
