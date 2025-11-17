@@ -3351,7 +3351,7 @@
 }
 .inner-page .sc-employee.active .box-content,
 .inner-page .sc-employee:hover .box-content {
-  padding-bottom: 93px;
+  /* padding-bottom: 93px; */
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -ms-transition: all 0.5s ease;
