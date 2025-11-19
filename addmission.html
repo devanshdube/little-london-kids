@@ -27,8 +27,14 @@
     <link rel="stylesheet" type="text/css" href="assets/css/responsive.css" />
 
     <!-- Favicon and Touch Icons  -->
-    <link rel="shortcut icon" href="assets/images/Favicon.png" />
-    <link rel="apple-touch-icon-precomposed" href="assets/images/Favicon.png" />
+    <link
+      rel="shortcut icon"
+      href="assets/images/LITTLE LONDON KIDS SCHOOL.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="assets/images/LITTLE LONDON KIDS SCHOOL.png"
+    />
   </head>
 
   <body class="counter-scroll header-fixed inner-page about">
@@ -59,39 +65,41 @@
                     </div>
                     <div class="btn-menu"><span></span></div>
                     <div class="nav-wrap">
-                    <nav id="mainnav" class="mainnav">
-                      <ul class="menu">
-                        <li class="menu-item">
-                          <a href="index.html">HOME</a>
-                        </li>
-                        <li class="menu-item">
-                          <a href="about.html">About</a>
-                        </li>
-                        <li class="menu-item-has-children">
-                          <a>Academics</a>
-                          <ul class="sub-menu">
-                            <li><a href="program.html">Programs</a></li>
-                            <li><a href="teacher.html">Teacher's</a></li>
-                            <li><a href="event.html">News & Event's</a></li>
-                            <li><a href="franchiseList.html">Franchise List</a></li>
-                          </ul>
-                        </li>
-                        <li class=""> 
-                          <a href="noticeBoard.html">Notice Board</a>
-                        </li>
-                        <li class="">
-                          <a href="addmission.html">Admission</a>
-                        </li>
-                        <li class="">
-                          <a href="gallery.html">Gallery</a>
-                        </li>
-                        <li class="inner">
-                          <a href="contact.html">CONTACTS</a>
-                        </li>
-                      </ul>
-                      <!-- /.menu -->
-                    </nav>
-                  </div>
+                      <nav id="mainnav" class="mainnav">
+                        <ul class="menu">
+                          <li class="menu-item">
+                            <a href="index.html">HOME</a>
+                          </li>
+                          <li class="menu-item">
+                            <a href="about.html">About</a>
+                          </li>
+                          <li class="menu-item-has-children">
+                            <a>Academics</a>
+                            <ul class="sub-menu">
+                              <li><a href="program.html">Programs</a></li>
+                              <li><a href="teacher.html">Teacher's</a></li>
+                              <li><a href="event.html">News & Event's</a></li>
+                              <li>
+                                <a href="franchiseList.html">Franchise List</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class="">
+                            <a href="noticeBoard.html">Notice Board</a>
+                          </li>
+                          <li class="">
+                            <a href="addmission.html">Admission</a>
+                          </li>
+                          <li class="">
+                            <a href="gallery.html">Gallery</a>
+                          </li>
+                          <li class="inner">
+                            <a href="contact.html">CONTACTS</a>
+                          </li>
+                        </ul>
+                        <!-- /.menu -->
+                      </nav>
+                    </div>
                     <div class="header-right fx">
                       <div id="header-search">
                         <a href="#" class="search-box header-search-icon">
@@ -733,7 +741,96 @@
               <div class="col-md-12">
                 <div class="form-message">
                   <h2 class="heading">Online Admission Enquiry</h2>
-                  <form
+                  <form id="admissionForm" class="comment-form">
+                    <div class="fx flex-wrap">
+                      <fieldset class="name">
+                        <input
+                          type="text"
+                          placeholder="Student Name"
+                          required
+                          name="studen_name"
+                          id="studen_name"
+                        />
+                      </fieldset>
+
+                      <fieldset class="name">
+                        <input
+                          type="text"
+                          placeholder="Parent's Name"
+                          required
+                          name="parent_name"
+                          id="parent_name"
+                        />
+                      </fieldset>
+
+                      <fieldset class="email">
+                        <input
+                          type="email"
+                          placeholder="Email"
+                          required
+                          name="email"
+                          id="email"
+                        />
+                      </fieldset>
+
+                      <fieldset class="phone">
+                        <input
+                          type="tel"
+                          placeholder="Phone Number"
+                          required
+                          name="phone"
+                          id="phone"
+                          maxlength="10"
+                        />
+                      </fieldset>
+
+                      <fieldset class="select-wrap">
+                        <div class="select">
+                          <select name="class_for" id="class_for">
+                            <option value="">Class Applying for</option>
+                            <option value="Nursery">Nursery</option>
+                            <option value="LKG">LKG</option>
+                            <option value="UKG">UKG</option>
+                            <option value="Grade 1">Grade 1</option>
+                            <option value="Grade 2">Grade 2</option>
+                            <option value="Grade 3">Grade 3</option>
+                            <option value="Grade 4">Grade 4</option>
+                            <option value="Grade 5">Grade 5</option>
+                            <option value="Grade 6">Grade 6</option>
+                            <option value="Grade 7">Grade 7</option>
+                            <option value="Grade 8">Grade 8</option>
+                          </select>
+                        </div>
+                      </fieldset>
+
+                      <fieldset class="select-wrap">
+                        <div class="select">
+                          <select name="branch" id="branch">
+                            <option value="">Select Branch</option>
+                            <option value="School 01">School 01</option>
+                            <option value="School 02">School 02</option>
+                          </select>
+                        </div>
+                      </fieldset>
+
+                      <fieldset class="message">
+                        <textarea
+                          placeholder="Additional Information"
+                          rows="5"
+                          name="information"
+                          id="information"
+                        ></textarea>
+                      </fieldset>
+
+                      <div class="wrap-btn">
+                        <button type="submit" class="fl-btn st-6">
+                          <span class="inner">Send message</span>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+
+                  <!-- <form
                     action="contact/contact-process4.php"
                     method="post"
                     id="commentform"
@@ -827,14 +924,14 @@
                         </button>
                       </div>
                     </div>
-                  </form>
+                  </form> -->
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-       <footer id="footer">
+        <footer id="footer">
           <section class="tf-subcribe">
             <div class="container">
               <div class="row">
@@ -872,7 +969,7 @@
                       <div class="logo-bottom" id="logo-footer">
                         <a href="index.html"
                           ><img
-                            src="assets/images/logo/logofootert.png"
+                            src="assets/images/logo/little schoolghhh.png"
                             alt="kinco"
                         /></a>
                       </div>
@@ -985,53 +1082,89 @@
                       </ul>
                     </div>
                     <div class="widget widget-news st-3">
-                      <h4 class="title-widget">recent news</h4>
+                      <h4 class="title-widget">Social Media</h4>
+
                       <ul class="list-news">
+                        <!-- Facebook -->
                         <li class="fx">
                           <img
-                            src="assets/images/thumbnails/widget9.jpg"
-                            alt="Image"
+                            src="assets/images/social/facebook.jpg"
+                            alt="Facebook"
                             class="feature"
                           />
                           <ul class="box-content">
                             <li>
                               <h6 class="title">
-                                <a href="blog-grid.html"
-                                  >Useful Code Extened End Developers</a
+                                <a
+                                  href="https://www.facebook.com/people/Little-London-Kids-School/61582269257597/"
+                                  target="_blank"
                                 >
+                                  Facebook
+                                </a>
                               </h6>
-                            </li>
-                            <li>
-                              <a
-                                href="blog-grid.html"
-                                class="fx meta-news clr-pri-6"
-                                ><i class="far fa-calendar-alt"></i>25 dec
-                                2021</a
-                              >
                             </li>
                           </ul>
                         </li>
+
+                        <!-- Instagram -->
                         <li class="fx">
                           <img
-                            src="assets/images/thumbnails/widget10.jpg"
-                            alt="Image"
+                            src="assets/images/social/instagram.jpg"
+                            alt="Instagram"
                             class="feature"
                           />
                           <ul class="box-content">
                             <li>
                               <h6 class="title">
-                                <a href="blog-grid.html"
-                                  >Useful Code Extened End Developers</a
+                                <a
+                                  href="https://www.instagram.com/littlelondonkidsschooljabalpur/?igsh=MXNwMWNiZHFrOHVoMg%3D%3D#"
+                                  target="_blank"
                                 >
+                                  Instagram
+                                </a>
                               </h6>
                             </li>
+                          </ul>
+                        </li>
+
+                        <!-- YouTube -->
+                        <li class="fx">
+                          <img
+                            src="assets/images/social/youtube.jpg"
+                            alt="YouTube"
+                            class="feature"
+                          />
+                          <ul class="box-content">
                             <li>
-                              <a
-                                href="blog-grid.html"
-                                class="fx meta-news clr-pri-6"
-                                ><i class="far fa-calendar-alt"></i>25 dec
-                                2021</a
-                              >
+                              <h6 class="title">
+                                <a
+                                  href="https://youtube.com/@littlelondonkidsschool?si=aGm8gAFJImzad4mN"
+                                  target="_blank"
+                                >
+                                  YouTube
+                                </a>
+                              </h6>
+                            </li>
+                          </ul>
+                        </li>
+
+                        <!-- Twitter -->
+                        <li class="fx">
+                          <img
+                            src="assets/images/social/twitter.jpg"
+                            alt="Twitter"
+                            class="feature"
+                          />
+                          <ul class="box-content">
+                            <li>
+                              <h6 class="title">
+                                <a
+                                  href="https://x.com/kids_londo47203?t=lvxO9Y4oHxUsMsRJ3n9nAg"
+                                  target="_blank"
+                                >
+                                  Twitter
+                                </a>
+                              </h6>
                             </li>
                           </ul>
                         </li>
@@ -1067,5 +1200,53 @@
     <script src="assets/js/shortcodes.js"></script>
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script>
+      document
+        .getElementById("admissionForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const studen_name = document.getElementById("studen_name").value;
+          const parent_name = document.getElementById("parent_name").value;
+          const email = document.getElementById("email").value;
+          const phone = document.getElementById("phone").value;
+          const class_for = document.getElementById("class_for").value;
+          const branch = document.getElementById("branch").value;
+          const information = document.getElementById("information").value;
+
+          try {
+            const res = await fetch(
+              "http://localhost:5555/auth/api/ngo/post/postSchoolAdmissionData",
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  studen_name,
+                  parent_name,
+                  email,
+                  phone,
+                  class_for,
+                  branch,
+                  information,
+                }),
+              }
+            );
+
+            const data = await res.json();
+
+            if (res.status === 201) {
+              alert("Admission Enquiry Submitted Successfully!");
+              document.getElementById("admissionForm").reset();
+            } else {
+              alert("Error: " + (data.error || "Something went wrong"));
+            }
+          } catch (error) {
+            console.error("API Error:", error);
+            alert("Server Error! Please try again later.");
+          }
+        });
+    </script>
   </body>
 </html>
