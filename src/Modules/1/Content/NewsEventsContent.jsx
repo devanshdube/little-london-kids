@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const POST_PROJECT_URL =
-  "http://localhost:5555/auth/api/ngo/post/postSchoolNewsEvents";
+  "https://kidschool.futurekidfoundation.org/auth/api/ngo/post/postSchoolNewsEvents";
 
 export default function NewsEventsContent() {
   const [title, setTitle] = useState("");

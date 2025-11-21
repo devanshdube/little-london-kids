@@ -40,7 +40,7 @@ const SignIn = () => {
       setLoading(true);
 
       const response = await axios.post(
-        "http://localhost:5555/auth/api/ngo/login/login",
+        "https://kidschool.futurekidfoundation.org/auth/api/ngo/login/loginSchool",
         formData
       );
 
@@ -104,7 +104,7 @@ const SignIn = () => {
 
   //     // 👇 Update this URL according to your backend
   //     const response = await axios.post(
-  //       "http://localhost:5555/auth/api/ngo/login/login",
+  //       "https://kidschool.futurekidfoundation.org/auth/api/ngo/login/login",
   //       formData
   //     );
 

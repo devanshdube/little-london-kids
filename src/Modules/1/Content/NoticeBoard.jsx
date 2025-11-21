@@ -3,16 +3,17 @@ import { Edit, Trash2, UserPlus, Search, X } from "lucide-react";
 import InputField from "../../../Components/InputField";
 import axios from "axios";
 import AddUserModal from "./AddUserModal";
-import EditUserModal from "./EditUserModal";
 import { useSelector, useDispatch } from "react-redux";
 import { logout as logoutAction } from "./../../../Redux/user/userSlice";
 import { useNavigate } from "react-router-dom";
 
-const API_URL = "http://localhost:5555/auth/api/ngo/get/getAllUser";
-const DELETE_URL_BASE = "http://localhost:5555/auth/api/ngo/login/deleteUser";
+const API_URL =
+  "https://kidschool.futurekidfoundation.org/auth/api/ngo/get/getSchoolNoticeQuerys";
+const DELETE_URL_BASE =
+  "https://kidschool.futurekidfoundation.org/auth/api/ngo/delete/deleteSchoolNotice";
 const CHUNK_SIZE = 5;
 
-const UsersContent = () => {
+const NoticeBoard = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -22,8 +23,6 @@ const UsersContent = () => {
   const [displayedUsers, setDisplayedUsers] = useState([]);
   const [filteredUsers, setFilteredUsers] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [roleFilter, setRoleFilter] = useState("");
-  const [statusFilter, setStatusFilter] = useState("");
   const [dateFilter, setDateFilter] = useState("");
   const [hasMore, setHasMore] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
@@ -36,20 +35,14 @@ const UsersContent = () => {
   const [error, setError] = useState(null);
   const [deletingId, setDeletingId] = useState(null);
 
-  // NEW: edit modal state
-  const [showEditUserModal, setShowEditUserModal] = useState(false);
-  const [editingUser, setEditingUser] = useState(null);
-
   const getToken = () => reduxToken || localStorage.getItem("token");
 
   const handleAuthError = (err) => {
     const status = err?.response?.status;
     if (status === 401) {
-      // token invalid/expired -> clear and redirect to signin
       try {
         dispatch(logoutAction());
       } catch (e) {
-        /* ignore */
         console.log(e);
       }
       try {
@@ -114,69 +107,21 @@ const UsersContent = () => {
     }
   }, [dispatch, navigate, reduxToken]);
 
-  // const fetchUsers = useCallback(async () => {
-  //   try {
-  //     setIsFetching(true);
-  //     setError(null);
-
-  //     const token = getToken();
-  //     if (!token) {
-  //       dispatch(logoutAction());
-  //       localStorage.removeItem("token");
-  //       navigate("/signin", { replace: true });
-  //       return;
-  //     }
-
-  //     const authHeader = { headers: { Authorization: `Bearer ${token}` } };
-
-  //     const res = await axios.get(API_URL, { ...authHeader, timeout: 15000 });
-  //     if (res?.data?.status === "Success" && Array.isArray(res.data.data)) {
-  //       const getAllUsers = res.data.data.map((p) => ({
-  //         ...p,
-  //         createdDate: p.created_at ? p.created_at.slice(0, 10) : null,
-  //       }));
-  //       setUsers(getAllUsers);
-  //     } else {
-  //       setError("API returned unexpected data.");
-  //       setUsers([]);
-  //     }
-  //   } catch (err) {
-  //     console.error("Fetch error:", err);
-  //     setError(err?.response?.data?.message || err.message || "Network error");
-  //     setUsers([]);
-  //   } finally {
-  //     setIsFetching(false);
-  //   }
-  // }, []);
-
   useEffect(() => {
     fetchUsers();
   }, [fetchUsers]);
 
-  // Apply filters and reset displayed chunk
   useEffect(() => {
     let filtered = users.slice();
 
-    // Search filter (name, mobile, email)
     if (searchTerm.trim()) {
       const q = searchTerm.trim().toLowerCase();
       filtered = filtered.filter((p) => {
-        const name = String(p.name || "").toLowerCase();
-        const mobile = String(p.mobile || "").toLowerCase();
-        const email = String(p.email || "").toLowerCase();
-        return name.includes(q) || mobile.includes(q) || email.includes(q);
+        const title = String(p.title || "").toLowerCase();
+        return title.includes(q);
       });
     }
 
-    // Status filter (case-insensitive)
-    if (statusFilter) {
-      const sf = statusFilter.toLowerCase();
-      filtered = filtered.filter(
-        (user) => String(user.status || "").toLowerCase() === sf
-      );
-    }
-
-    // Date filter (compare createdDate which is yyyy-mm-dd)
     if (dateFilter) {
       filtered = filtered.filter((user) => user.createdDate === dateFilter);
     }
@@ -187,9 +132,8 @@ const UsersContent = () => {
     setFilteredUsers(filtered);
     setDisplayedUsers(filtered.slice(0, CHUNK_SIZE));
     setHasMore(filtered.length > CHUNK_SIZE);
-  }, [users, searchTerm, statusFilter, dateFilter]);
+  }, [users, searchTerm, dateFilter]);
 
-  // Load more data (append next chunk)
   const loadMore = useCallback(() => {
     if (isLoading || !hasMore) return;
     setIsLoading(true);
@@ -212,7 +156,6 @@ const UsersContent = () => {
     }, 350);
   }, [isLoading, hasMore]);
 
-  // Infinite scroll observer
   useEffect(() => {
     const scrollContainer = document.querySelector(".user-scroll-container");
     const observer = new IntersectionObserver(
@@ -233,20 +176,12 @@ const UsersContent = () => {
     };
   }, [hasMore, isLoading, loadMore]);
 
-  // Reset all filters
   const handleReset = () => {
     setSearchTerm("");
-    setStatusFilter("");
     setDateFilter("");
   };
 
-  const hasActiveFilters =
-    searchTerm || roleFilter || statusFilter || dateFilter;
-
-  const handleEditUser = (user) => {
-    setEditingUser(user);
-    setShowEditUserModal(true);
-  };
+  const hasActiveFilters = searchTerm || dateFilter;
 
   const handleDeleteUser = async (userId) => {
     if (!userId) return;
@@ -258,7 +193,6 @@ const UsersContent = () => {
     try {
       setDeletingId(userId);
 
-      // Optimistic UI: remove from local lists immediately
       setDisplayedUsers((prev) => prev.filter((u) => u.id !== userId));
       setUsers((prev) => prev.filter((u) => u.id !== userId));
       setFilteredUsers((prev) => prev.filter((u) => u.id !== userId));
@@ -273,8 +207,6 @@ const UsersContent = () => {
       const res = await axios.delete(url, { timeout: 15000 });
 
       if (res?.data?.status === "Success") {
-        // success: optionally show a toast
-        // ensure hasMore flag correct
         setHasMore(
           displayedUsersRef.current.length < filteredUsersRef.current.length
         );
@@ -283,7 +215,6 @@ const UsersContent = () => {
       }
     } catch (err) {
       console.error("Delete error:", err);
-      // revert by re-fetching server data
       await fetchUsers();
       alert(
         err?.response?.data?.message || err.message || "Failed to delete user"
@@ -292,6 +223,9 @@ const UsersContent = () => {
       setDeletingId(null);
     }
   };
+
+  console.log(isFetching);
+  console.log(error);
 
   return (
     <>
@@ -304,13 +238,11 @@ const UsersContent = () => {
               className="flex items-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700"
             >
               <UserPlus size={20} />
-              Add User
+              Add Notice
             </button>
           </div>
 
-          {/* Search and Filters */}
           <div className="space-y-4">
-            {/* Search Box */}
             <div className="relative">
               <InputField
                 placeholder="Search by name or email..."
@@ -322,16 +254,6 @@ const UsersContent = () => {
 
             {/* Filters Row */}
             <div className="flex flex-wrap gap-3 items-center">
-              <select
-                value={statusFilter}
-                onChange={(e) => setStatusFilter(e.target.value)}
-                className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
-              >
-                <option value="">All Status</option>
-                <option value="Active">Active</option>
-                <option value="Inactive">Inactive</option>
-              </select>
-
               <input
                 type="date"
                 value={dateFilter}
@@ -366,21 +288,6 @@ const UsersContent = () => {
           />
         )}
 
-        {showEditUserModal && editingUser && (
-          <EditUserModal
-            user={editingUser}
-            onClose={() => {
-              setShowEditUserModal(false);
-              setEditingUser(null);
-            }}
-            onUpdated={() => {
-              setShowEditUserModal(false);
-              setEditingUser(null);
-              fetchUsers();
-            }}
-          />
-        )}
-
         {/* Table */}
         <div
           className="overflow-x-auto user-scroll-container"
@@ -390,31 +297,16 @@ const UsersContent = () => {
             <thead className="bg-gray-50 sticky top-0 z-10">
               <tr>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                  Name
+                  Index
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                  Phone
+                  Title
                 </th>
+                {/* <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                  Description
+                </th> */}
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                  Email
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                  Role
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                  DOB
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                  Aadhar
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                  Address
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                  Status
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                  Profile
+                  Date
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
                   Actions
@@ -422,107 +314,29 @@ const UsersContent = () => {
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200 bg-white">
-              {displayedUsers.map((user) => (
+              {displayedUsers.map((user, index) => (
                 <tr key={user.id} className="hover:bg-gray-50">
+                  <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                    {index + 1}
+                  </td>
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white text-sm">
-                        {user.name?.[0] || "U"}
-                      </div>
-                      <span className="font-medium">{user.name}</span>
+                      <span className="font-medium">{user.title}</span>
                     </div>
                   </td>
 
-                  <td className="px-6 py-4 whitespace-nowrap text-gray-600">
-                    {user.mobile}
-                  </td>
+                  {/* <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                    {user.description}
+                  </td> */}
 
                   <td className="px-6 py-4 whitespace-nowrap">
                     <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded text-sm">
-                      {user.email}
+                      {(user.created_at || "").slice(0, 10)}
                     </span>
-                  </td>
-
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <span
-                      className={`px-2 py-1 rounded text-sm ${
-                        user.designation === "Admin"
-                          ? "bg-purple-100 text-purple-800"
-                          : user.designation === "Employee"
-                          ? "bg-green-100 text-green-800"
-                          : "bg-gray-100 text-gray-700"
-                      }`}
-                    >
-                      {user.designation === "Admin"
-                        ? "Admin"
-                        : user.designation === "Employee"
-                        ? "Team"
-                        : user.designation}
-                    </span>
-                  </td>
-
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded text-sm">
-                      {user.dob}
-                    </span>
-                  </td>
-
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded text-sm">
-                      {user.aadhar}
-                    </span>
-                  </td>
-
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded text-sm">
-                      {user.address}, {user.city}
-                    </span>
-                  </td>
-
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <span
-                      className={`px-2 py-1 rounded text-sm ${
-                        String(user.status || "").toLowerCase() === "active"
-                          ? "bg-green-100 text-green-800"
-                          : "bg-red-100 text-red-800"
-                      }`}
-                    >
-                      {user.status === "active"
-                        ? "Active"
-                        : user.status === "inactive"
-                        ? "Block"
-                        : user.status}
-                    </span>
-                  </td>
-
-                  <td className="px-4 py-3 whitespace-nowrap text-sm">
-                    {user.user_profile ? (
-                      <a
-                        href={user.user_profile}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-2"
-                      >
-                        <img
-                          src={user.user_profile}
-                          alt="profile"
-                          className="w-14 h-10 object-cover rounded border"
-                        />
-                        <span className="text-xs text-blue-600">View</span>
-                      </a>
-                    ) : (
-                      <span className="text-xs text-gray-400">No</span>
-                    )}
                   </td>
 
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div className="flex gap-2">
-                      <button
-                        className="p-1 text-blue-600 hover:bg-blue-50 rounded"
-                        onClick={() => handleEditUser(user)} // <- open edit modal
-                      >
-                        <Edit size={18} />
-                      </button>
                       <button
                         className="p-1 text-red-600 hover:bg-red-50 rounded flex items-center justify-center"
                         onClick={() => handleDeleteUser(user.id)}
@@ -590,4 +404,4 @@ const UsersContent = () => {
   );
 };
 
-export default UsersContent;
+export default NoticeBoard;

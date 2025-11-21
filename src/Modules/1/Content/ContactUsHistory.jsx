@@ -7,7 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logout as logoutAction } from "./../../../Redux/user/userSlice";
 
-const API_URL = "http://localhost:5555/auth/api/ngo/get/getAllSchoolQuerys";
+const API_URL =
+  "https://kidschool.futurekidfoundation.org/auth/api/ngo/get/getAllSchoolQuerys";
 const CHUNK_SIZE = 8;
 
 const ContactUsHistory = () => {

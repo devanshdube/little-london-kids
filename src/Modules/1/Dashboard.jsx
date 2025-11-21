@@ -1,35 +1,28 @@
 import React, { useEffect, useState } from "react";
 import {
   Home,
-  Users,
   ChevronsLeft,
   ChevronsRight,
   ShieldCheck,
-  IndianRupee,
-  CreditCard,
-  Folder,
-  ClipboardList,
   Images,
   Phone,
   GraduationCap,
   Handshake,
   Megaphone,
+  Newspaper,
+  ClipboardType,
 } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../Redux/user/userSlice";
 import { useLocation, useNavigate } from "react-router-dom";
 import DashboardContent from "./Content/DashboardContent";
-import UsersContent from "./Content/UsersContent";
-import PaymentContent from "./Content/PaymentContent";
-import PaymentHistory from "./Content/PaymentHistory";
-import ProjectUploader from "./Content/ProjectUploader";
-import ProjectsContent from "./Content/ProjectsContent";
 import GalleryUploader from "./Content/GalleryUploader";
 import ContactUsHistory from "./Content/ContactUsHistory";
 import AdmissionHistory from "./Content/AdmissionHistory";
 import FranchiseHistory from "./Content/FranchiseHistory";
 import NewsEventsContent from "./Content/NewsEventsContent";
 import NewsEventsHistory from "./Content/NewsEventsHistory";
+import NoticeBoard from "./Content/NoticeBoard";
 
 export default function Dashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -52,6 +45,7 @@ export default function Dashboard() {
   }, [location.pathname]);
 
   const menuItems = [
+    { id: "dashboard", label: "Dashboard", icon: Home },
     { id: "Contact-History", label: "Contact-History", icon: Phone },
     {
       id: "Admission-History",
@@ -61,17 +55,14 @@ export default function Dashboard() {
     { id: "gallery", label: "Gallery", icon: Images },
     { id: "Franchise", label: "Franchise", icon: Handshake },
     { id: "NewsEvents", label: "News-Events", icon: Megaphone },
-    { id: "NewsEventsHistory", label: "News-Events-History", icon: Megaphone },
-    { id: "dashboard", label: "Dashboard", icon: Home },
-    { id: "users", label: "Users", icon: Users },
-    { id: "payment", label: "Payment", icon: IndianRupee },
-    { id: "payment-history", label: "Payment History", icon: CreditCard },
-    { id: "project", label: "Create Project", icon: Folder },
-    { id: "project-list", label: "Project List", icon: ClipboardList },
+    { id: "NewsEventsHistory", label: "News-Events-History", icon: Newspaper },
+    { id: "Notice-Board", label: "Notice-Board", icon: ClipboardType },
   ];
 
   const renderContent = () => {
     switch (activeMenu) {
+      case "dashboard":
+        return <DashboardContent />;
       case "Contact-History":
         return <ContactUsHistory />;
       case "Admission-History":
@@ -84,18 +75,8 @@ export default function Dashboard() {
         return <NewsEventsContent />;
       case "NewsEventsHistory":
         return <NewsEventsHistory />;
-      case "dashboard":
-        return <DashboardContent />;
-      case "users":
-        return <UsersContent />;
-      case "payment":
-        return <PaymentContent />;
-      case "payment-history":
-        return <PaymentHistory />;
-      case "project":
-        return <ProjectUploader />;
-      case "project-list":
-        return <ProjectsContent />;
+      case "Notice-Board":
+        return <NoticeBoard />;
       default:
         return <DashboardContent />;
     }

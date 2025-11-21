@@ -5,7 +5,7 @@ import { Mail, Lock } from "lucide-react";
 import SmartAlert from "../../Components/Alerts/SmartAlert";
 import InputField from "../../Components/InputField";
 
-const API_BASE = "http://localhost:5555";
+const API_BASE = "https://kidschool.futurekidfoundation.org";
 
 const initialState = {
   email: "",
@@ -94,7 +94,7 @@ const ForgotPassword = () => {
     dispatch({ type: "SET_ERRORS", errors: {} });
 
     try {
-      const url = `${API_BASE}/auth/api/ngo/login/forgotPassword`;
+      const url = `${API_BASE}/auth/api/ngo/login/forgotSchoolPassword`;
       console.log("POST", url, { email: state.email.trim() });
 
       const res = await axios.post(
@@ -165,7 +165,7 @@ const ForgotPassword = () => {
 
     try {
       const res = await axios.post(
-        `${API_BASE}/auth/api/ngo/login/verifyOtpAndResetPassword`,
+        `${API_BASE}/auth/api/ngo/login/verifyOtpAndResetSchoolPassword`,
         {
           email: state.email.trim(),
           otp: state.otp.trim(),

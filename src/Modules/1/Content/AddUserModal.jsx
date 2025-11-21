@@ -2,23 +2,15 @@ import React, { useState } from "react";
 import { X, User, Upload, Users } from "lucide-react";
 import axios from "axios";
 
-const API_URL = "http://localhost:5555/auth/api/ngo/login/register";
+const API_URL =
+  "https://kidschool.futurekidfoundation.org/auth/api/ngo/post/postSchoolNoticeData";
 
 const AddUserModal = ({ onClose, onUserAdded }) => {
   const [form, setForm] = useState({
-    name: "",
-    f_name: "",
-    mobile: "",
-    email: "",
-    designation: "",
-    dob: "",
-    aadhar: "",
-    address: "",
-    city: "",
-    password: "",
+    title: "",
+    description: "",
   });
 
-  const [file, setFile] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState(null);
   const [successMsg, setSuccessMsg] = useState(null);
@@ -29,18 +21,10 @@ const AddUserModal = ({ onClose, onUserAdded }) => {
     setForm((s) => ({ ...s, [name]: value }));
   };
 
-  // handle file upload
-  const handleFileChange = (e) => {
-    const f = e.target.files && e.target.files[0] ? e.target.files[0] : null;
-    setFile(f);
-  };
-
   // validation
   const validate = () => {
-    if (!form.name?.trim()) return "Name is required";
-    if (!form.email?.trim()) return "Email is required";
-    if (!form.designation?.trim()) return "Designation is required";
-    if (!form.password) return "Password is required";
+    if (!form.title?.trim()) return "Title is required";
+    if (!form.description?.trim()) return "Description is required";
     return null;
   };
 
@@ -59,29 +43,20 @@ const AddUserModal = ({ onClose, onUserAdded }) => {
     try {
       setIsSubmitting(true);
 
-      const fd = new FormData();
-      fd.append("name", form.name);
-      fd.append("f_name", form.f_name || "");
-      fd.append("mobile", form.mobile || "");
-      fd.append("email", form.email);
-      fd.append("designation", form.designation);
-      fd.append("dob", form.dob || "");
-      fd.append("aadhar", form.aadhar || "");
-      fd.append("address", form.address || "");
-      fd.append("city", form.city || "");
-      fd.append("password", form.password);
-
-      if (file) {
-        fd.append("user_profile", file);
-      }
-
-      // DON'T manually set Content-Type
-      const res = await axios.post(API_URL, fd, {
-        timeout: 20000,
-      });
+      // SEND JSON INSTEAD OF FORMDATA
+      const res = await axios.post(
+        API_URL,
+        {
+          title: form.title,
+          description: form.description,
+        },
+        {
+          timeout: 20000,
+        }
+      );
 
       if (res?.data?.status === "Success") {
-        setSuccessMsg("User added successfully");
+        setSuccessMsg("Notice added successfully");
         setTimeout(() => {
           onUserAdded && onUserAdded();
         }, 800);
@@ -89,7 +64,7 @@ const AddUserModal = ({ onClose, onUserAdded }) => {
         setErrorMsg(res?.data?.message || "Unexpected response from server");
       }
     } catch (err) {
-      console.error("Add user error:", err);
+      console.error("Add notice error:", err);
       const msg =
         err?.response?.data?.message ||
         err?.response?.data?.error ||
@@ -171,199 +146,60 @@ const AddUserModal = ({ onClose, onUserAdded }) => {
                 className="text-sm font-semibold uppercase tracking-wide mb-3 text-gray-700"
                 style={{ color: "#805dca" }}
               >
-                Personal Information
+                Notice Information
               </h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {/* Full Name */}
+              <div className="flex flex-col gap-4">
+                {/* Title */}
                 <div>
                   <input
-                    name="name"
-                    value={form.name}
+                    name="title"
+                    value={form.title}
                     onChange={handleChange}
-                    placeholder="Full Name *"
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-700"
-                    autoComplete="name"
+                    placeholder="Title *"
+                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg 
+        focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-700"
+                    autoComplete="title"
                   />
                 </div>
 
-                {/* Father / Guardian Name */}
+                {/* Description - Bigger Box */}
                 <div>
-                  <input
-                    name="f_name"
-                    value={form.f_name}
+                  <textarea
+                    name="description"
+                    value={form.description}
                     onChange={handleChange}
-                    placeholder="Father / Guardian Name"
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-700"
-                    autoComplete="organization"
-                  />
-                </div>
-
-                {/* DOB */}
-                <div>
-                  <label className="text-xs text-gray-600 mb-1 block pl-1">
-                    Date of Birth
-                  </label>
-                  <input
-                    name="dob"
-                    value={form.dob}
-                    onChange={handleChange}
-                    type="date"
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-700"
-                  />
-                </div>
-
-                {/* Aadhar */}
-                <div>
-                  <label className="text-xs text-gray-600 mb-1 block pl-1">
-                    Aadhar Number
-                  </label>
-                  <input
-                    name="aadhar"
-                    value={form.aadhar}
-                    onChange={(e) => {
-                      const value = e.target.value.replace(/[^0-9]/g, "");
-                      setForm((prev) => ({ ...prev, aadhar: value }));
-                    }}
-                    placeholder="Aadhar Number"
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-700"
-                    inputMode="numeric"
-                    minLength={12}
-                    maxLength={12}
+                    placeholder="Enter Your Notice Description..."
+                    rows={6} // height increased
+                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg 
+        focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-700 resize-none"
+                    autoComplete="description"
                   />
                 </div>
               </div>
-            </div>
 
-            {/* Contact */}
-            <div>
-              <h4
-                className="text-sm font-semibold uppercase tracking-wide mb-3 text-gray-700"
-                style={{ color: "#805dca" }}
-              >
-                Contact Information
-              </h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {/* Email */}
+              {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <input
-                    name="email"
-                    value={form.email}
+                    name="title"
+                    value={form.title}
                     onChange={handleChange}
-                    placeholder="Email Address *"
-                    type="email"
+                    placeholder="Title *"
                     className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-700"
-                    autoComplete="email"
-                    inputMode="email"
+                    autoComplete="title"
                   />
                 </div>
 
-                {/* Mobile */}
                 <div>
                   <input
-                    name="mobile"
-                    value={form.mobile}
-                    onChange={(e) => {
-                      const value = e.target.value.replace(/[^0-9]/g, "");
-                      setForm((prev) => ({ ...prev, mobile: value }));
-                    }}
-                    placeholder="Mobile Number"
+                    name="description"
+                    value={form.description}
+                    onChange={handleChange}
+                    placeholder="Enter Your Notice Description..."
                     className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-700"
-                    inputMode="numeric"
-                    minLength={10}
-                    maxLength={10}
+                    autoComplete="description"
                   />
                 </div>
-
-                {/* Address */}
-                <div>
-                  <input
-                    name="address"
-                    value={form.address}
-                    onChange={handleChange}
-                    placeholder="Address"
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-700"
-                  />
-                </div>
-
-                {/* City */}
-                <div>
-                  <input
-                    name="city"
-                    value={form.city}
-                    onChange={handleChange}
-                    placeholder="City"
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-700"
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Professional */}
-            <div>
-              <h4
-                className="text-sm font-semibold uppercase tracking-wide mb-3 text-gray-700"
-                style={{ color: "#805dca" }}
-              >
-                Professional Details
-              </h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {/* Designation */}
-                <div>
-                  <select
-                    name="designation"
-                    value={form.designation}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-700"
-                  >
-                    <option value="">Select Designation *</option>
-                    <option value="Admin">Admin</option>
-                    <option value="Employee">Team</option>
-                  </select>
-                </div>
-
-                {/* Password */}
-                <div>
-                  <input
-                    name="password"
-                    value={form.password}
-                    onChange={handleChange}
-                    placeholder="Password *"
-                    type="password"
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-700"
-                    autoComplete="new-password"
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* File upload */}
-            <div>
-              <h4
-                className="text-sm font-semibold uppercase tracking-wide mb-3 text-gray-700"
-                style={{ color: "#805dca" }}
-              >
-                Profile Image
-              </h4>
-              <div className="relative">
-                <div className="flex items-center gap-3 p-4 rounded-lg border transition-colors bg-white border-gray-200 hover:border-purple-400">
-                  <div className="p-2 rounded-lg bg-purple-50">
-                    <Upload size={20} style={{ color: "#805dca" }} />
-                  </div>
-                  <div className="flex-1">
-                    <input
-                      type="file"
-                      accept="image/*"
-                      onChange={handleFileChange}
-                      className="text-sm text-gray-600"
-                    />
-                    {file && (
-                      <p className="text-xs text-green-500 mt-1">
-                        Selected: {file.name}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -406,12 +242,12 @@ const AddUserModal = ({ onClose, onUserAdded }) => {
                       d="M4 12a8 8 0 018-8v8z"
                     ></path>
                   </svg>
-                  Creating Account...
+                  Creating Notice...
                 </>
               ) : (
                 <>
                   <User size={18} />
-                  Create Account
+                  Create Notice
                 </>
               )}
             </button>

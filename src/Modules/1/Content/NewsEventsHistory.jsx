@@ -8,9 +8,9 @@ import { logout as logoutAction } from "./../../../Redux/user/userSlice";
 
 // ✅ API CHANGED – NEWS EVENTS
 const API_URL =
-  "http://localhost:5555/auth/api/ngo/get/getSchoolNewsEventsQuerys";
+  "https://kidschool.futurekidfoundation.org/auth/api/ngo/get/getSchoolNewsEventsQuerys";
 const DELETE_PROJECT_URL_BASE =
-  "http://localhost:5555/auth/api/ngo/delete/deleteSchoolNewsEvents";
+  "https://kidschool.futurekidfoundation.org/auth/api/ngo/delete/deleteSchoolNewsEvents";
 
 const CHUNK_SIZE = 5;
 

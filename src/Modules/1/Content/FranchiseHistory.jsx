@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { logout as logoutAction } from "./../../../Redux/user/userSlice";
 
 const API_URL =
-  "http://localhost:5555/auth/api/ngo/get/getSchoolFranchiseQuerys";
+  "https://kidschool.futurekidfoundation.org/auth/api/ngo/get/getSchoolFranchiseQuerys";
 const CHUNK_SIZE = 8;
 
 const FranchiseHistory = () => {
