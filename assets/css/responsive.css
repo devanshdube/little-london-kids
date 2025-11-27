@@ -16,16 +16,20 @@
     .sc-contact {
         margin: 0 0;
     }
+
     .inner-page .header-right {
         right: 15px;
     }
+
     .inner-page .header-contact {
         align-items: center;
         margin-left: 30px;
     }
-    .inner-page #mainnav .menu > li {
+
+    .inner-page #mainnav .menu>li {
         margin-right: 30px;
     }
+
     .tf-program-details2 .wrap-details .sc-about-2 {
         padding: 4% 4% !important;
     }
@@ -35,9 +39,11 @@
     #mainnav .menu {
         padding-left: 0px;
     }
+
     .sc-img {
         display: none;
     }
+
     .header-contact,
     .inner-contact {
         margin-left: 30px;
@@ -47,30 +53,32 @@
         padding: 0 23%;
     }
 
-    .header2 #mainnav .menu > li {
+    .header2 #mainnav .menu>li {
         margin-right: 30px;
     }
 
-    #mainnav .menu > li.menu-item-has-children > a::after {
+    #mainnav .menu>li.menu-item-has-children>a::after {
         right: -15px;
     }
 
     .sc-contact {
         padding: 30px;
     }
+
     .inner-page .nav-wrap {
         left: 24%;
     }
+
     .inner-page #header-search,
     .inner-page .menu-bar-right {
         display: none;
     }
 
-    .slider-courses  .owl-nav .owl-next {
+    .slider-courses .owl-nav .owl-next {
         right: -100px;
     }
 
-    .slider-courses  .owl-nav .owl-prev {
+    .slider-courses .owl-nav .owl-prev {
         left: -100px;
     }
 }
@@ -79,6 +87,7 @@
     .fl-services .box-content {
         padding: 20px 80px 0 30px;
     }
+
     .feature-blog-1 {
         top: -50px;
         left: -20px;
@@ -86,22 +95,25 @@
 }
 
 @media only screen and (max-width: 1375px) {
+
     .tab-time-table .content-tab .content-inner .list-date,
     .calendar-box {
         width: 1170px;
     }
+
     .tab-time-table .content-tab .content-inner {
         overflow-x: auto;
     }
 
-    .slider-courses  .owl-nav .owl-next,
-    .slider-courses  .owl-nav .owl-prev {
+    .slider-courses .owl-nav .owl-next,
+    .slider-courses .owl-nav .owl-prev {
         display: none;
     }
 }
 
 @media only screen and (max-width: 1199px) {
-    .tf-program-details .bg1, 
+
+    .tf-program-details .bg1,
     .tf-program-details .bg2,
     #header-search,
     .menu-bar-right,
@@ -121,6 +133,7 @@
     .teacher-details {
         flex-wrap: wrap;
     }
+
     .sc-contact .wrap,
     .sc-contact .inner-sc-contact {
         width: 50%;
@@ -154,7 +167,7 @@
         margin-right: 15px;
     }
 
-    #mainnav .menu > li {
+    #mainnav .menu>li {
         margin-right: 30px;
     }
 
@@ -181,6 +194,7 @@
     .sc-contact .inner-contact {
         margin-left: 15px;
     }
+
     .teacher .tf-section.tf-counter2 .title-heading .title,
     .widget-logo .wrap {
         padding-right: 0;
@@ -206,6 +220,7 @@
     .sc-contact .inner-sc-contact {
         justify-content: end;
     }
+
     .item-slider-1 .wrap {
         padding: 20px;
         font-size: 45px;
@@ -218,10 +233,12 @@
     .fl-subcribe {
         padding: 70px 100px 98px;
     }
+
     .inner-page #mainnav .menu li a,
     .header2 #mainnav .menu li a {
         font-size: 15px;
     }
+
     .inner-contact ul li:last-child {
         font-size: 20px;
     }
@@ -235,6 +252,7 @@
     .inner-page .sc-employee .box-content {
         top: 160px;
     }
+
     .inner-page.teacher .sc-employee {
         margin-bottom: 330px;
     }
@@ -242,6 +260,7 @@
     .wrap-couter {
         margin-right: -370px;
     }
+
     .tf-classe-detail .teacher-desc {
         width: 100%;
     }
@@ -249,6 +268,7 @@
     .teacher-desc {
         padding-left: 0;
     }
+
     .teacher-image {
         padding: 11px 10px 12px 10px;
         width: calc(43% - 22px);
@@ -282,12 +302,15 @@
     .sc-artice .box-content {
         padding: 126px 15px 25px 15px
     }
+
     .tf-teacher-details .teacher-infor {
         width: calc(55% - 22px);
     }
+
     .tf-teacher-details .teacher-image {
         width: calc(43% - 22px);
     }
+
     .tf-teacher-details .teacher-desc {
         width: calc(70% - 22px);
     }
@@ -299,25 +322,29 @@
         position: relative;
         padding: 15px 12px;
     }
+
     #sidebar.classe-details .widget .inner-infor {
         padding: 0 15px 40px;
     }
+
     .sc-calendar {
         padding: 30px 20px 43px 20px;
     }
+
     .sc-event-box .content {
         padding-left: 30px;
     }
 }
 
 @media only screen and (max-width: 991px) {
+
     .tf-about .wrap-image .image img,
     .tf-program-details2 .wrap-details .image,
     .tf-program-details2 .wrap-details .sc-about-2,
     .tab-l-100 img,
     .fl-services .box-feature,
     .fl-services .box-content,
-    .heading.st-1 .title-heading, 
+    .heading.st-1 .title-heading,
     .heading.st-1 .heading-btn,
     .feature-about2 img {
         width: 100%;
@@ -334,13 +361,15 @@
     .testimonial .sc-quote .inner {
         width: 75%;
     }
+
     #site-header .site-header-inner.st-2,
     .testimonial .sc-quote .list-author,
     .testimonial .sc-quote .owl-carousel {
         padding: 0px;
     }
+
     .tf-program-details2 .wrap-details .sc-about-2 {
-        padding:70px 15px !important;
+        padding: 70px 15px !important;
     }
 
     .sc-event-box {
@@ -362,7 +391,8 @@
     }
 
     .tab-time-table .content-tab {
-        padding: 45px 20px 75px;;
+        padding: 45px 20px 75px;
+        ;
     }
 
     .sc-pricing {
@@ -425,7 +455,7 @@
         margin-left: 30px;
     }
 
-    .tf-about .wrap-image > .fx {
+    .tf-about .wrap-image>.fx {
         margin-left: -30px;
     }
 
@@ -457,10 +487,12 @@
     .tf-section.tf-program {
         padding: 110px 0 !important;
     }
+
     .testimonial .sc-quote .owl-carousel .owl-dots,
     .top-bar-2 .header-contact {
         display: none;
     }
+
     .tf-about .wrap-image .image.p-l70,
     .item-slider-1 .box-content {
         padding-left: 0;
@@ -469,6 +501,7 @@
     .item-fb {
         margin: 0 auto;
     }
+
     .fl-services .box-content,
     .classe-details.p-t17,
     .tf-section.tf-program-details2,
@@ -477,9 +510,11 @@
     .sc-service {
         padding: 0 0 !important;
     }
+
     .infor-teacher-detail {
         margin-top: 70px;
     }
+
     .item-quote {
         padding: 30px 15px;
     }
@@ -487,11 +522,13 @@
     .themesflat-pagination {
         padding-top: 0 !important;
     }
+
     .infor-product-details,
     .fl-services .box-feature,
     .subcribe-form form {
         padding-left: 0;
     }
+
     .sc-about-content,
     .item-slider-1 .box-feature {
         padding-left: 15px;
@@ -519,7 +556,7 @@
     }
 
     .tf-section.tf-gallery {
-        padding: 350px 0 0!important;
+        padding: 350px 0 0 !important;
     }
 
     .gallery .tf-section.tf-gallery {
@@ -533,9 +570,11 @@
     .tf-section {
         padding: 70px 0 !important;
     }
+
     .tf-section.tf-courses {
         padding: 130px 0 !important;
     }
+
     .tf-subcribe {
         padding: 50px 0;
     }
@@ -547,6 +586,7 @@
     .feature-about2 {
         padding: 0 0;
     }
+
     .tf-section.tf-program-details2,
     .widget-footer,
     .tf-sc-contact {
@@ -556,21 +596,26 @@
     .feature-about2 {
         margin-bottom: 50px;
     }
+
     .side-bar-shop,
     article.tf-details,
     .title-heading {
         margin-bottom: 40px !important;
     }
+
     .sc-service {
         margin-bottom: 20px;
     }
+
     .sc-discovery {
         margin-bottom: 15px;
     }
+
     .tab-time-table .menu-tab li,
     .tab-faq.flat-tabs .menu-tab li {
         margin-bottom: 10px;
     }
+
     .fl-services .box-feature,
     .infor-teacher-detail .wrap-couter .progress-couter,
     .sc-pricing,
@@ -579,6 +624,7 @@
     .sc-discovery-2 {
         margin-bottom: 30px;
     }
+
     .teacher-infor,
     .heading.st-1 .title-heading,
     .widget-footer .widget {
@@ -645,6 +691,7 @@
         margin: 0 15px;
         padding: 50px 20px;
     }
+
     .fl-btn.st-14 {
         padding: 0px 60px 0 33px;
     }
@@ -656,29 +703,37 @@
     .item-slider-1 .wrap {
         font-size: 25px;
     }
+
     .item-slider-1 .box-content {
         width: 60%;
     }
+
     .item-slider-1 .box-feature {
         width: 40%;
         padding-top: 50px;
     }
+
     .inner-page .bg-inner1 {
         max-width: 35%;
     }
+
     .sc-discovery-about .col-discovery {
         width: calc(50% - 30px);
         margin-left: 30px;
     }
+
     .sc-discovery-about {
         margin-left: -30px;
     }
+
     .fx.sc-discovery-about {
         flex-wrap: wrap;
     }
+
     .sc-discovery-2 {
         background-size: cover;
     }
+
     .inner-page .sc-employee .box-feature {
         display: -webkit-box;
         display: -moz-box;
@@ -703,20 +758,25 @@
         background-size: contain;
         background-position: center left;
     }
+
     .infor-teacher-detail .wrap-couter {
         flex-wrap: wrap;
     }
+
     .shop.details .sc-product,
     .infor-teacher-detail .wrap-couter .progress-couter {
         width: calc(50% - 30px);
     }
+
     .infor-teacher-detail {
         padding: 50px 30px;
     }
+
     .tf-message .form-message {
         padding-left: 30px;
         padding-right: 30px;
     }
+
     .tf-teacher-details .teacher-desc,
     .tf-teacher-details .teacher-image,
     .tf-teacher-details .teacher-infor {
@@ -724,43 +784,55 @@
         margin-left: 0;
         padding-right: 0;
     }
+
     .tf-teacher-details .teacher-details {
         margin-left: 0;
     }
+
     .tf-section.tf-calendar2 {
         padding: 100px 0 280px !important;
     }
+
     .tf-section.tf-gallery {
-        padding: 180px 0 0!important;
+        padding: 180px 0 0 !important;
     }
+
     .tf-section.tf-service-2 {
         padding: 260px 0 70px !important;
     }
+
     .tf-section.tf-feedback {
         padding-bottom: 120px !important;
     }
+
     .teacher .tf-section.tf-teacher-details,
     .teacher .tf-section.tf-counter2 {
         padding-bottom: 100px !important;
     }
+
     .program-details .tf-section.tf-courses {
-        padding: 70px 0 130px!important;
+        padding: 70px 0 130px !important;
     }
+
     .classes-details .tf-section.tf-courses {
-        padding: 70px 0 210px!important;
+        padding: 70px 0 210px !important;
     }
+
     .testimonial .tf-quote {
         margin-top: -70px !important;
     }
+
     .pricing .flat-tabs .menu-tab {
         position: relative;
         top: 0;
         margin-bottom: 30px;
     }
+
     .feature-blog-1 {
         top: -95px;
         left: -40px;
     }
+
     .infor-product .img .img-top {
         max-width: 100%;
     }
@@ -768,24 +840,30 @@
     .infor-product .img .img-thumnail .image {
         width: calc(33.333% - 30px);
     }
+
     .inner-page .tf-subcribe {
         padding: 70px 0;
     }
 }
+
 @media (max-width: 991px) and (min-width: 767px) {
     .sc-program .content h3 {
         font-size: 25px;
     }
+
     .meta-post ul li i {
         font-size: 13px;
         margin-right: 5px;
     }
+
     .meta-post ul li {
         margin-right: 10px;
         font-size: 12px;
     }
 }
+
 @media only screen and (max-width: 767px) {
+
     .top-bar-2 .header-contact,
     .item-slider-1 .box-feature,
     .comment-list ul.children,
@@ -794,14 +872,17 @@
     .sc-quote .owl-carousel .owl-dots {
         display: none;
     }
+
     .dropdown ul {
         left: 0;
     }
+
     .sc-calendar {
         background-size: cover !important;
     }
+
     .owl-carousel .owl-dots {
-     display: none !important;
+        display: none !important;
     }
 
     .tf-slider-1 {
@@ -813,7 +894,7 @@
     }
 
     .classes-details .tf-section.tf-courses {
-        padding: 70px 0 100px!important;
+        padding: 70px 0 100px !important;
     }
 
     .fl-services .inner .sc-services-2,
@@ -829,18 +910,20 @@
     .widget-footer .widget,
     .box-blog-grid.st-2 .box-artice,
     .box-artice .box-feature img,
-    .tag-article .box-lt, 
+    .tag-article .box-lt,
     .tag-article .box-rt,
     .quotes-article.st-2 .box-feature,
     .quotes-article.st-2 .box-content,
     .item-slider-2 .box-content {
         width: 100%;
     }
+
     .feature-about2,
     .infor-teacher-detail .wrap-couter,
     .wrap-couter {
         margin-right: 0;
     }
+
     .item-courses .box-content {
         margin: -60px 15px 0px;
     }
@@ -848,12 +931,15 @@
     .sc-discovery {
         width: 50%;
     }
+
     .inner-page .bg-inner1 {
         max-width: 44%;
     }
+
     .item-courses .box-content ul li {
         width: 48%;
     }
+
     .flat-tabs.tab-shop .content-tab,
     .widget.widget-business,
     .widget-footer .widget,
@@ -878,24 +964,28 @@
     .sc-service .title {
         margin-bottom: 0;
     }
+
     .shop article .jus-bet .show-result,
     .calendar-text,
     .sc-contact .wrap,
     .tag-article .box-lt {
         margin-bottom: 15px;
     }
+
     .sc-faq.active {
         webkit-transform: translateY(0);
         -ms-transform: translateY(0);
         -o-transform: translateY(0);
         transform: translateY(0);
     }
+
     .sc-faq.active:hover {
         webkit-transform: translateY(-20px);
         -ms-transform: translateY(-20px);
         -o-transform: translateY(-20px);
         transform: translateY(-20px);
     }
+
     .classes .item-courses,
     .tf-program-details3 .sc-about-content,
     .sc-faq,
@@ -907,7 +997,7 @@
         margin-bottom: 30px;
     }
 
-    .quotes-article.st-2 .box-content  {
+    .quotes-article.st-2 .box-content {
         text-align: center;
     }
 
@@ -941,27 +1031,34 @@
         width: 100%;
         margin-bottom: 20px;
     }
+
     .fl-subcribe {
         padding: 70px 30px 70px;
     }
+
     .tf-counter.st-2 {
         background-size: cover;
     }
+
     .sc-discovery .inner-discovery {
         padding: 30px 15px 60px;
     }
+
     .form-review form fieldset,
     .form-message fieldset,
     .infor-teacher-detail .wrap-couter .progress-couter {
         width: calc(100% - 30px);
     }
+
     .classes-details #footer {
         margin-top: -17px;
     }
+
     .shop article .jus-bet,
     .wrap-calendar {
         flex-wrap: wrap;
     }
+
     .testimonial .item-quote {
         padding: 40px 20px;
     }
@@ -975,6 +1072,7 @@
         position: relative;
         margin-left: auto;
     }
+
     .tf-section.tf-testimonial {
         padding: 170px 0 150px !important;
         margin-top: -120px;
@@ -984,14 +1082,17 @@
         padding-bottom: 0 !important;
     }
 }
+
 @media only screen and (max-width: 600px) {
     .tf-section.tf-discovery-2 {
         padding-top: 380px !important;
         margin-top: -150px;
     }
+
     .item-courses .box-feature img {
         width: 100%;
     }
+
     .img-thumnail,
     .wrap-couter {
         flex-wrap: wrap;
@@ -1000,12 +1101,14 @@
     .wrap-couter .progress-couter {
         margin-bottom: 30px;
     }
+
     .infor-product .img .img-thumnail .image,
     .shop.details .sc-product,
     .sc-product,
     .wrap-couter .progress-couter {
         width: calc(100% - 30px);
     }
+
     .classes .tf-section.tf-courses {
         margin-top: -85px;
     }
@@ -1018,9 +1121,22 @@
         margin-bottom: 15px;
     }
 
+    .response-img {
+        max-width: 70%;
+    }
+
+    .title-heading .sub-heading {
+        font-size: 16px;
+        line-height: 2;
+        text-transform: capitalize;
+        margin-bottom: 13px;
+        font-weight: 600;
+    }
+
 }
 
 @media only screen and (max-width: 499px) {
+
     .testimonial .tf-quote .title-heading .sub-heading svg:first-child,
     .testimonial .tf-testimonial .title-heading .sub-heading svg:first-child,
     .sc-quote .inner .heading .right,
@@ -1054,17 +1170,20 @@
         margin: 0;
     }
 
-    #footer .fl-btn.st-7 .inner::before, 
+    #footer .fl-btn.st-7 .inner::before,
     #footer .fl-btn.st-7 .inner::after {
         right: -20px;
         font-size: 15px;
     }
+
     .fl-subcribe .subcribe-form form input {
         padding: 26px;
     }
+
     .sc-contact .inner-sc-contact {
         display: block;
     }
+
     .tf-program-details2 .sc-about-2 .inner ul li,
     .sc-about-2 .inner ul li,
     .fl-services .inner .sc-services-2,
@@ -1079,7 +1198,7 @@
     .sc-contact .inner-sc-contact .box-btn,
     .widget-logo .wrap {
         margin-bottom: 15px;
-    } 
+    }
 
     .btn-menu {
         right: 15px;
@@ -1091,7 +1210,7 @@
 
     .fl-btn.st-6 {
         margin: 0 auto;
-        padding:0 80px 0 60px;
+        padding: 0 80px 0 60px;
     }
 
     .item-fb {
@@ -1099,25 +1218,32 @@
         background-size: cover;
         height: auto;
     }
+
     .tf-section.tf-register {
         padding: 30px 0 200px 0 !important;
     }
+
     .item-slider-1 .box-btn {
         flex-wrap: wrap;
     }
+
     .item-slider-1 .box-btn .fl-btn {
         margin-bottom: 10px;
     }
+
     .sc-about-2 .inner ul {
         flex-wrap: wrap;
     }
+
     .inner-page .bg-inner1 {
         max-width: 55%;
     }
+
     .sc-event-box.style2,
-    .tf-about .wrap-image > .fx {
+    .tf-about .wrap-image>.fx {
         display: block;
     }
+
     .tf-about .wrap-image .image {
         margin-bottom: 30px;
     }
@@ -1126,68 +1252,83 @@
     .sc-event-box.style2 .image {
         padding: 0;
     }
+
     .sc-event-box.style2 .content,
-    .sc-event-box.style2 .image{
+    .sc-event-box.style2 .image {
         width: 100%;
     }
+
     .tf-about .wrap-image .fx .image,
     .sc-discovery-about .col-discovery {
         width: calc(100% - 30px);
         margin-left: 30px;
     }
+
     .about .tf-counter.st-2 {
         margin-top: -100px;
     }
+
     .sc-program .content h3 {
         font-size: 26px;
     }
+
     #sidebar.classe-details .widget .inner-infor {
         padding: 0 15px 20px;
     }
+
     .sc-event-box.style2 .content {
-        padding:30px;
+        padding: 30px;
     }
+
     .calendar-text {
         padding: 13px 30px 19px 30px !important;
     }
+
     .form-message .heading {
         margin-bottom: 25px;
         font-size: 37px;
     }
+
     .form-message form button {
         margin-left: 30px !important;
 
     }
+
     .inner-page .box-parents {
         position: relative;
         margin-left: auto;
         margin-bottom: 30px;
         right: 0;
     }
+
     .pricing .flat-tabs .menu-tab {
         flex-wrap: wrap;
         justify-content: flex-start;
     }
 }
-    @media only screen and (max-width: 435px) {
-        .teacher-image {
-            background: none;
-            padding: 0;
-            margin-right: 0;
-        }
-        .teacher-image img {
-            width: 100%;
-        }
 
-        .tf-testimonial .item-fb {
-            width: 330px;
-            height: auto;
-            padding: 38px 20px 36px 20px;
-        }
-        .teacher-image img {
-            -webkit-mask-image: none;
-        }
-        .contact .title-heading .sub-heading svg:first-child {
-            display: none;
-        }
+@media only screen and (max-width: 435px) {
+    .teacher-image {
+        background: none;
+        padding: 0;
+        margin-right: 0;
     }
+
+    .teacher-image img {
+        width: 100%;
+    }
+
+    .tf-testimonial .item-fb {
+        width: 330px;
+        height: auto;
+        padding: 70px 20px 36px 20px;
+    }
+
+    .teacher-image img {
+        -webkit-mask-image: none;
+    }
+
+    .contact .title-heading .sub-heading svg:first-child {
+        display: none;
+    }
+}

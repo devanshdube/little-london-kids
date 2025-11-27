@@ -1157,7 +1157,7 @@ a:focus {
 
 /* logo */
 .logo {
-  line-height: 96px;
+  line-height: 80px;
 }
 
 .logo.st-2 {
@@ -1205,7 +1205,7 @@ a:focus {
 
 .header-contact {
   align-items: center;
-  margin-left: 120px;
+  margin-left: 50px;
 }
 
 .inner-contact {
