@@ -604,7 +604,7 @@
   height: 100%;
   top: 0;
   left: 0;
-  background: url(../images/thumbnails/banner-about.jpg) center center no-repeat;
+  background: url(../images/thumbnails/banner-img.png) center center no-repeat;
   background-size: cover;
   -webkit-mask-image: url(../images/background/mask3.png);
   mask-image: url(../images/background/mask3.png);
@@ -2503,7 +2503,7 @@
 }
 
 .tf-sc-about1 {
-  background-image: url(../images/background/bg-aboutus-1.05948b98.png);
+  background-image: url(../images/background/background-img-3.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
