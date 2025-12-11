@@ -30,9 +30,9 @@
 
 <body class="header-fixed inner-page contact">
   <!-- Preloader -->
-  <div id="preload" class="preload">
+  <!-- <div id="preload" class="preload">
     <div class="preload-logo"></div>
-  </div>
+  </div> -->
 
   <div id="wrapper">
     <div id="page" class="clearfix">
@@ -828,7 +828,7 @@
       responseMsg.innerHTML = "Sending...";
 
       try {
-        const res = await fetch("http://localhost:5555/auth/api/ngo/post/postSchoolfranchiseData", {
+        const res = await fetch("https://kidschool.futurekidfoundation.org/auth/api/ngo/post/postSchoolfranchiseData", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"

@@ -39,9 +39,9 @@
 
   <body class="header-fixed inner-page gallery">
     <!-- Preloader -->
-    <div id="preload" class="preload">
+    <!-- <div id="preload" class="preload">
       <div class="preload-logo"></div>
-    </div>
+    </div> -->
 
     <div id="wrapper">
       <div id="page" class="clearfix">
@@ -1111,7 +1111,7 @@
       async function loadSchoolGallery() {
         try {
           const res = await fetch(
-            "http://localhost:5555/auth/api/ngo/get/getSchoolGalleryImages"
+            "https://kidschool.futurekidfoundation.org/auth/api/ngo/get/getSchoolGalleryImages"
           );
 
           const data = await res.json();

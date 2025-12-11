@@ -39,9 +39,9 @@
 
   <body class="header-fixed inner-page contact">
     <!-- Preloader -->
-    <div id="preload" class="preload">
+    <!-- <div id="preload" class="preload">
       <div class="preload-logo"></div>
-    </div>
+    </div> -->
 
     <div id="wrapper">
       <div id="page" class="clearfix">
@@ -787,6 +787,8 @@
                           id="phone"
                           maxlength="10"
                           minlength="10"
+                          pattern="[0-9]{10}"
+                          title="Please enter a valid 10-digit phone number"
                         />
                       </fieldset>
 
@@ -1136,7 +1138,7 @@
 
           try {
             const res = await fetch(
-              "http://localhost:5555/auth/api/ngo/post/postSchoolContactData",
+              "https://kidschool.futurekidfoundation.org/auth/api/ngo/post/postSchoolContactData",
               {
                 method: "POST",
                 headers: {

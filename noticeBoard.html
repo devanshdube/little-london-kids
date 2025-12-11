@@ -78,9 +78,9 @@
 
   <body class="header-fixed inner-page testimonial">
     <!-- Preloader -->
-    <div id="preload" class="preload">
+    <!-- <div id="preload" class="preload">
       <div class="preload-logo"></div>
-    </div>
+    </div> -->
 
     <div id="wrapper">
       <div id="page" class="clearfix">
@@ -611,7 +611,7 @@
                     >
                       School Notices
                     </h2> -->
-                    <p class="text-white opacity-75" style="font-size: 1.3rem">
+                    <p class="opacity-75" style="font-size: 1.3rem 'color:#ff6666'" >
                       Latest updates from school
                     </p>
                   </div>
@@ -622,7 +622,7 @@
                       class="spinner-border text-light"
                       style="width: 3rem; height: 3rem"
                     ></div>
-                    <p class="text-white mt-3">Notices load ho rahe hain...</p>
+                    <p class="text-white mt-3">Loading....</p>
                   </div>
 
                   <!-- Notices Container -->
@@ -634,10 +634,9 @@
                   <!-- No notices message -->
                   <div id="no-notices" class="text-center py-5 d-none">
                     <h3
-                      class="text-white"
-                      style="font-family: 'Patrick Hand', cursive"
+                      style="font-family: 'Patrick Hand', cursive 'color:#ff6666'"
                     >
-                      Koi notice nahi hai abhi
+                      There is no notice yet
                     </h3>
                   </div>
                 </div>
@@ -888,7 +887,7 @@
 
         try {
           const response = await fetch(
-            "http://localhost:5555/auth/api/ngo/get/getSchoolNoticeQuerys"
+            "https://kidschool.futurekidfoundation.org/auth/api/ngo/get/getSchoolNoticeQuerys"
           );
           const result = await response.json();
 

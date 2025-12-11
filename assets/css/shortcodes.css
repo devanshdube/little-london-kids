@@ -515,7 +515,7 @@
 }
 
 .title-heading .sub-heading .inner-sub.st-1 {
-  padding: 0 15px;
+  padding: 0 5px;
 }
 
 .title-heading .sub-heading .inner-sub.st-2 {
@@ -587,7 +587,7 @@
   width: 100%;
   height: 100%;
   background-color: #223668;
-  opacity: 0.85;
+  opacity: 0.50;
   background-size: cover;
   -webkit-mask-image: url(../images/background/mask3.png);
   mask-image: url(../images/background/mask3.png);
